@@ -1,0 +1,2087 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: fb4d6ff78686302c8962a6e9 -->
+<robot name="miku">
+  <!-- Link pelvis -->
+  <link name="pelvis">
+    <inertial>
+      <origin xyz="8.97668e-09 4.32849e-18 0.891865" rpy="0 0 0"/>
+      <mass value="1.63184"/>
+      <inertia ixx="0.00445142" ixy="4.70932e-10" ixz="-1.68195e-09" iyy="0.00217002" iyz="0" izz="0.00442459"/>
+    </inertial>
+    <!-- Part pelvis_parts -->
+    <visual>
+      <origin xyz="8.97668e-09 4.32849e-18 0.891865" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="../meshes/pelvis_visual.stl"/>
+      </geometry>
+      <material name="pelvis_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_hip_pitch -->
+  <link name="right_hip_pitch">
+    <inertial>
+      <origin xyz="-0.075 2.22045e-16 -1.38778e-17" rpy="0 0 0"/>
+      <mass value="0.486947"/>
+      <inertia ixx="0.000608684" ixy="-3.33566e-34" ixz="4.06969e-34" iyy="0.000405789" iyz="2.84947e-35" izz="0.000405789"/>
+    </inertial>
+    <!-- Part right_hip_pitch_parts -->
+    <visual>
+      <origin xyz="-0.075 2.22045e-16 -1.38778e-17" rpy="-1.5708 7.12835e-15 2.10942e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_hip_pitch_visual.stl"/>
+      </geometry>
+      <material name="right_hip_pitch_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_hip_roll -->
+  <link name="right_hip_roll">
+    <inertial>
+      <origin xyz="1.38778e-17 0.21 0.05" rpy="0 0 0"/>
+      <mass value="3.11646"/>
+      <inertia ixx="0.0285416" ixy="1.21843e-33" ixz="2.85384e-33" iyy="0.00389557" iyz="-5.52287e-33" izz="0.0285416"/>
+    </inertial>
+    <!-- Part right_hip_roll_parts -->
+    <collision>
+      <origin xyz="1.44329e-18 0.212 0.05" rpy="1.5708 3.75837e-32 3.08149e-32"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="1.38778e-17 0.21 0.05" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_hip_roll_visual.stl"/>
+      </geometry>
+      <material name="right_hip_roll_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_hip_yaw -->
+  <link name="right_hip_yaw">
+    <inertial>
+      <origin xyz="1.38778e-17 3.06162e-18 0.05" rpy="0 0 0"/>
+      <mass value="0.486947"/>
+      <inertia ixx="0.000608684" ixy="5.09171e-34" ixz="4.64099e-35" iyy="0.000405789" iyz="-4.17236e-34" izz="0.000405789"/>
+    </inertial>
+    <!-- Part right_hip_yaw_parts -->
+    <visual>
+      <origin xyz="1.38778e-17 3.06162e-18 0.05" rpy="3.14159 6.16174e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_hip_yaw_visual.stl"/>
+      </geometry>
+      <material name="right_hip_yaw_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_knee_pitch -->
+  <link name="right_knee_pitch">
+    <inertial>
+      <origin xyz="3.06162e-18 -0.197 -0.025" rpy="0 0 0"/>
+      <mass value="2.86325"/>
+      <inertia ixx="0.0224135" ixy="4.93038e-32" ixz="4.18223e-33" iyy="0.00357906" iyz="9.97973e-34" izz="0.0224135"/>
+    </inertial>
+    <!-- Part right_knee_pitch_parts -->
+    <collision>
+      <origin xyz="1.48759e-30 -0.222 -0.025" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <cylinder length="0.15" radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="3.06162e-18 -0.197 -0.025" rpy="-1.5708 5.96834e-15 6.16174e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_knee_pitch_visual.stl"/>
+      </geometry>
+      <material name="right_knee_pitch_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_ankle_roll -->
+  <link name="right_ankle_roll">
+    <inertial>
+      <origin xyz="-3.05067e-45 5.21857e-18 0.05" rpy="0 0 0"/>
+      <mass value="0.121737"/>
+      <inertia ixx="4.43832e-05" ixy="3.64397e-35" ixz="0" iyy="3.80427e-05" iyz="0" izz="4.43832e-05"/>
+    </inertial>
+    <!-- Part right_ankle_roll_parts -->
+    <visual>
+      <origin xyz="0 5.21857e-18 0.05" rpy="3.14159 6.10051e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_ankle_roll_visual.stl"/>
+      </geometry>
+      <material name="right_ankle_roll_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_ankle_yaw -->
+  <link name="right_ankle_yaw">
+    <inertial>
+      <origin xyz="-5.88523e-46 -1.38778e-17 -0.025" rpy="0 0 0"/>
+      <mass value="0.121737"/>
+      <inertia ixx="3.80427e-05" ixy="-3.00927e-36" ixz="4.68373e-36" iyy="4.43832e-05" iyz="7.48462e-35" izz="4.43832e-05"/>
+    </inertial>
+    <!-- Part right_ankle_yaw_parts -->
+    <visual>
+      <origin xyz="0 -1.38778e-17 -0.025" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_ankle_yaw_visual.stl"/>
+      </geometry>
+      <material name="right_ankle_yaw_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_foot -->
+  <link name="right_foot">
+    <inertial>
+      <origin xyz="0.0525 -0.063 -0.025" rpy="0 0 0"/>
+      <mass value="0.433566"/>
+      <inertia ixx="0.000175919" ixy="-2.6963e-33" ixz="1.77266e-33" iyy="0.00137997" iyz="-6.83499e-35" izz="0.00126908"/>
+    </inertial>
+    <!-- Part right_foot_parts -->
+    <visual>
+      <origin xyz="0.0525 -0.063 -0.025" rpy="-1.5708 5.96834e-15 6.10051e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_foot_visual.stl"/>
+      </geometry>
+      <material name="right_foot_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from right_ankle_yaw to right_foot -->
+  <joint name="left_ankle_pitch" type="revolute">
+    <origin xyz="0.025 0 -0.025" rpy="1.08468e-29 1.5708 0"/>
+    <parent link="right_ankle_yaw"/>
+    <child link="right_foot"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_ankle_roll to right_ankle_yaw -->
+  <joint name="left_ankle_roll" type="revolute">
+    <origin xyz="4.16334e-17 0.025 0.05" rpy="-1.5708 9.26912e-30 6.52656e-28"/>
+    <parent link="right_ankle_roll"/>
+    <child link="right_ankle_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_knee_pitch to right_ankle_roll -->
+  <joint name="left_ankle_yaw" type="revolute">
+    <origin xyz="1.00005e-17 -0.344 -0.025" rpy="1.5708 -1.5708 0"/>
+    <parent link="right_knee_pitch"/>
+    <child link="right_ankle_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_hip_yaw to right_knee_pitch -->
+  <joint name="left_knee_pitch" type="revolute">
+    <origin xyz="0.025 3.06162e-18 0.05" rpy="-1.5708 3.01986e-30 -1.5708"/>
+    <parent link="right_hip_yaw"/>
+    <child link="right_knee_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-2.35619" upper="3.55271e-15"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_hip_roll to right_hip_yaw -->
+  <joint name="left_hip_yaw" type="revolute">
+    <origin xyz="0 0.37 0.05" rpy="-1.5708 1.249e-15 -2.77556e-17"/>
+    <parent link="right_hip_roll"/>
+    <child link="right_hip_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_hip_pitch to right_hip_roll -->
+  <joint name="left_hip_roll" type="revolute">
+    <origin xyz="-0.05 -1.11022e-16 -1.38778e-17" rpy="-3.14159 -1.5708 0"/>
+    <parent link="right_hip_pitch"/>
+    <child link="right_hip_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.261799" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from pelvis to right_hip_pitch -->
+  <joint name="left_hip_pitch" type="revolute">
+    <origin xyz="-3.06162e-18 -0.08 0.89" rpy="1.5708 2.10942e-15 -7.12835e-15"/>
+    <parent link="pelvis"/>
+    <child link="right_hip_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="2.35619"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link left_hip_pitch -->
+  <link name="left_hip_pitch">
+    <inertial>
+      <origin xyz="-0.075 -1.11022e-16 6.40949e-33" rpy="0 0 0"/>
+      <mass value="0.486947"/>
+      <inertia ixx="0.000608684" ixy="0" ixz="1.31437e-48" iyy="0.000405789" iyz="1.67571e-35" izz="0.000405789"/>
+    </inertial>
+    <!-- Part left_hip_pitch_parts -->
+    <visual>
+      <origin xyz="-0.075 -1.11022e-16 0" rpy="1.5708 1.44329e-15 -3.97656e-31"/>
+      <geometry>
+        <mesh filename="../meshes/left_hip_pitch_visual.stl"/>
+      </geometry>
+      <material name="left_hip_pitch_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_hip_roll -->
+  <link name="left_hip_roll">
+    <inertial>
+      <origin xyz="0 0.21 0.05" rpy="0 0 0"/>
+      <mass value="3.11646"/>
+      <inertia ixx="0.0285416" ixy="-8.09194e-33" ixz="-7.28817e-33" iyy="0.00389557" iyz="-5.50208e-34" izz="0.0285416"/>
+    </inertial>
+    <!-- Part left_hip_roll_parts -->
+    <collision>
+      <origin xyz="1.16142e-18 0.212 0.05" rpy="1.5708 -4.26313e-32 2.74138e-32"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0.21 0.05" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_hip_roll_visual.stl"/>
+      </geometry>
+      <material name="left_hip_roll_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_hip_yaw -->
+  <link name="left_hip_yaw">
+    <inertial>
+      <origin xyz="-1.38778e-17 3.06162e-18 0.05" rpy="0 0 0"/>
+      <mass value="0.486947"/>
+      <inertia ixx="0.000608684" ixy="-2.05763e-35" ixz="0" iyy="0.000405789" iyz="0" izz="0.000405789"/>
+    </inertial>
+    <!-- Part left_hip_yaw_parts -->
+    <visual>
+      <origin xyz="-1.38778e-17 3.06162e-18 0.05" rpy="-3.14159 5.38546e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_hip_yaw_visual.stl"/>
+      </geometry>
+      <material name="left_hip_yaw_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_knee_pitch -->
+  <link name="left_knee_pitch">
+    <inertial>
+      <origin xyz="3.06162e-18 0.197 -0.025" rpy="0 0 0"/>
+      <mass value="2.86325"/>
+      <inertia ixx="0.0224135" ixy="-1.54074e-33" ixz="7.35886e-47" iyy="0.00357906" iyz="1.4375e-35" izz="0.0224135"/>
+    </inertial>
+    <!-- Part left_knee_pitch_parts -->
+    <collision>
+      <origin xyz="-9.62965e-33 0.222 -0.025" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <cylinder length="0.15" radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="3.06162e-18 0.197 -0.025" rpy="1.5708 6.55625e-29 -5.38546e-16"/>
+      <geometry>
+        <mesh filename="../meshes/left_knee_pitch_visual.stl"/>
+      </geometry>
+      <material name="left_knee_pitch_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_ankle_roll -->
+  <link name="left_ankle_roll">
+    <inertial>
+      <origin xyz="0 5.21857e-18 0.05" rpy="0 0 0"/>
+      <mass value="0.121737"/>
+      <inertia ixx="4.43832e-05" ixy="-3.42643e-34" ixz="-7.52316e-37" iyy="3.80427e-05" iyz="-3.00927e-36" izz="4.43832e-05"/>
+    </inertial>
+    <!-- Part left_ankle_roll_parts -->
+    <visual>
+      <origin xyz="0 5.21857e-18 0.05" rpy="-3.14159 4.77314e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_ankle_roll_visual.stl"/>
+      </geometry>
+      <material name="left_ankle_roll_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_ankle_yaw -->
+  <link name="left_ankle_yaw">
+    <inertial>
+      <origin xyz="0 -1.38778e-17 -0.025" rpy="0 0 0"/>
+      <mass value="0.121737"/>
+      <inertia ixx="3.80427e-05" ixy="-2.40741e-35" ixz="-4.21833e-37" iyy="4.43832e-05" iyz="-4.17118e-37" izz="4.43832e-05"/>
+    </inertial>
+    <!-- Part left_ankle_yaw_parts -->
+    <visual>
+      <origin xyz="0 -1.38778e-17 -0.025" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_ankle_yaw_visual.stl"/>
+      </geometry>
+      <material name="left_ankle_yaw_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_foot -->
+  <link name="left_foot">
+    <inertial>
+      <origin xyz="0.0525 0.063 -0.025" rpy="0 0 0"/>
+      <mass value="0.433566"/>
+      <inertia ixx="0.000175919" ixy="1.92593e-34" ixz="-5.5713e-33" iyy="0.00137997" iyz="7.52126e-34" izz="0.00126908"/>
+    </inertial>
+    <!-- Part left_foot_parts -->
+    <visual>
+      <origin xyz="0.0525 0.063 -0.025" rpy="1.5708 -8.20953e-14 6.03137e-15"/>
+      <geometry>
+        <mesh filename="../meshes/left_foot_visual.stl"/>
+      </geometry>
+      <material name="left_foot_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from left_ankle_yaw to left_foot -->
+  <joint name="right_ankle_pitch" type="revolute">
+    <origin xyz="-0.025 0 -0.025" rpy="3.14159 1.5708 0"/>
+    <parent link="left_ankle_yaw"/>
+    <child link="left_foot"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_ankle_roll to left_ankle_yaw -->
+  <joint name="right_ankle_roll" type="revolute">
+    <origin xyz="-1.38778e-17 0.025 0.05" rpy="-1.5708 2.02825e-15 6.12323e-17"/>
+    <parent link="left_ankle_roll"/>
+    <child link="left_ankle_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_knee_pitch to left_ankle_roll -->
+  <joint name="right_ankle_yaw" type="revolute">
+    <origin xyz="6.29306e-15 0.344 -0.025" rpy="-1.5708 1.5708 0"/>
+    <parent link="left_knee_pitch"/>
+    <child link="left_ankle_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_hip_yaw to left_knee_pitch -->
+  <joint name="right_knee_pitch" type="revolute">
+    <origin xyz="-0.025 3.06162e-18 0.05" rpy="1.5708 2.66241e-30 -1.5708"/>
+    <parent link="left_hip_yaw"/>
+    <child link="left_knee_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0" upper="2.35619"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_hip_roll to left_hip_yaw -->
+  <joint name="right_hip_yaw" type="revolute">
+    <origin xyz="0 0.37 0.05" rpy="-1.5708 9.99201e-16 -1.906e-15"/>
+    <parent link="left_hip_roll"/>
+    <child link="left_hip_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_hip_pitch to left_hip_roll -->
+  <joint name="right_hip_roll" type="revolute">
+    <origin xyz="-0.05 0 0" rpy="-3.51538e-16 1.5708 0"/>
+    <parent link="left_hip_pitch"/>
+    <child link="left_hip_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0.261799"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from pelvis to left_hip_pitch -->
+  <joint name="right_hip_pitch" type="revolute">
+    <origin xyz="-3.06162e-18 0.08 0.89" rpy="-1.5708 -1.57772e-30 1.44329e-15"/>
+    <parent link="pelvis"/>
+    <child link="left_hip_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-2.35619" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link waist_yaw -->
+  <link name="waist_yaw">
+    <inertial>
+      <origin xyz="-1.68512e-18 -4.40971e-18 0.040516" rpy="0 0 0"/>
+      <mass value="0.311646"/>
+      <inertia ixx="0.000249317" ixy="-9.29551e-75" ixz="-1.63742e-48" iyy="0.000189585" iyz="5.9177e-47" izz="0.000189585"/>
+    </inertial>
+    <!-- Part waist_yaw_parts -->
+    <visual>
+      <origin xyz="-1.68512e-18 -4.40971e-18 0.040516" rpy="2.58745e-28 -1.32608e-27 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/waist_yaw_visual.stl"/>
+      </geometry>
+      <material name="waist_yaw_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link waist_pitch -->
+  <link name="waist_pitch">
+    <inertial>
+      <origin xyz="-2.15695e-18 0.118004 -0.025" rpy="0 0 0"/>
+      <mass value="0.486947"/>
+      <inertia ixx="0.000608684" ixy="-1.63825e-48" ixz="-1.84626e-71" iyy="0.000405789" iyz="1.52711e-44" izz="0.000405789"/>
+    </inertial>
+    <!-- Part waist_pitch_parts -->
+    <visual>
+      <origin xyz="-2.15695e-18 0.118004 -0.025" rpy="-1.5708 2.34926e-52 4.52796e-28"/>
+      <geometry>
+        <mesh filename="../meshes/waist_pitch_visual.stl"/>
+      </geometry>
+      <material name="waist_pitch_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link shoulder_base -->
+  <link name="shoulder_base">
+    <inertial>
+      <origin xyz="3.67182e-08 -0.151463 -0.0249996" rpy="0 0 0"/>
+      <mass value="1.35594"/>
+      <inertia ixx="0.00285851" ixy="-2.30899e-09" ixz="3.9026e-09" iyy="0.00182667" iyz="2.32603e-08" izz="0.00312204"/>
+    </inertial>
+    <!-- Part shoulder_base_parts -->
+    <collision>
+      <origin xyz="0 -0.09948 -0.025" rpy="1.5708 1.27036e-33 1.12104e-44"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="3.67182e-08 -0.151463 -0.0249996" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/shoulder_base_visual.stl"/>
+      </geometry>
+      <material name="shoulder_base_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_shoulder_pitch -->
+  <link name="left_shoulder_pitch">
+    <inertial>
+      <origin xyz="3.37024e-18 -2.22045e-16 0.04" rpy="0 0 0"/>
+      <mass value="0.311646"/>
+      <inertia ixx="0.000249317" ixy="6.34908e-48" ixz="1.52209e-36" iyy="0.000189585" iyz="4.48203e-48" izz="0.000189585"/>
+    </inertial>
+    <!-- Part left_shoulder_pitch_parts -->
+    <visual>
+      <origin xyz="3.37024e-18 -2.22045e-16 0.04" rpy="1.5708 -1.22465e-16 -4.52855e-28"/>
+      <geometry>
+        <mesh filename="../meshes/left_shoulder_pitch_visual.stl"/>
+      </geometry>
+      <material name="left_shoulder_pitch_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_shoulder_roll -->
+  <link name="left_shoulder_roll">
+    <inertial>
+      <origin xyz="-0.108 -9.7603e-60 -0.025" rpy="0 0 0"/>
+      <mass value="0.476818"/>
+      <inertia ixx="0.000214568" ixy="2.0226e-48" ixz="1.80871e-35" iyy="0.00084222" iyz="7.67896e-47" izz="0.00084222"/>
+    </inertial>
+    <!-- Part left_shoulder_roll_parts -->
+    <collision>
+      <origin xyz="-0.108 -6.94628e-44 -0.025" rpy="1.5708 -2.38166e-44 1.5708"/>
+      <geometry>
+        <cylinder length="0.08" radius="0.03"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.108 0 -0.025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_shoulder_roll_visual.stl"/>
+      </geometry>
+      <material name="left_shoulder_roll_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_shoulder_yaw -->
+  <link name="left_shoulder_yaw">
+    <inertial>
+      <origin xyz="1.83697e-18 -2.22045e-16 0.03" rpy="0 0 0"/>
+      <mass value="0.175301"/>
+      <inertia ixx="7.59637e-05" ixy="4.48729e-48" ixz="2.62667e-36" iyy="7.88854e-05" iyz="3.05165e-48" izz="7.59637e-05"/>
+    </inertial>
+    <!-- Part left_shoulder_yaw_parts -->
+    <visual>
+      <origin xyz="1.83697e-18 -2.22045e-16 0.03" rpy="1.5708 -1.22465e-16 -4.57539e-28"/>
+      <geometry>
+        <mesh filename="../meshes/left_shoulder_yaw_visual.stl"/>
+      </geometry>
+      <material name="left_shoulder_yaw_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_elbow_pitch -->
+  <link name="left_elbow_pitch">
+    <inertial>
+      <origin xyz="-0.0925 -1.83697e-18 -0.025" rpy="0 0 0"/>
+      <mass value="0.304342"/>
+      <inertia ixx="9.51068e-05" ixy="3.30554e-36" ixz="-2.4767e-49" iyy="0.000443832" iyz="-1.04541e-48" izz="0.000443832"/>
+    </inertial>
+    <!-- Part left_elbow_pitch_parts -->
+    <collision>
+      <origin xyz="-0.102 -1.83697e-18 -0.025" rpy="-2.54072e-33 1.5708 0"/>
+      <geometry>
+        <cylinder length="0.08" radius="0.025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0925 -1.83697e-18 -0.025" rpy="1.88538e-28 -4.49651e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_elbow_pitch_visual.stl"/>
+      </geometry>
+      <material name="left_elbow_pitch_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_wrist_roll -->
+  <link name="left_wrist_roll">
+    <inertial>
+      <origin xyz="1.22465e-18 -4.44089e-16 0.025" rpy="0 0 0"/>
+      <mass value="0.0779115"/>
+      <inertia ixx="2.40227e-05" ixy="2.10008e-48" ixz="-3.27054e-61" iyy="1.55823e-05" iyz="-2.33498e-50" izz="2.40227e-05"/>
+    </inertial>
+    <!-- Part left_wrist_roll_parts -->
+    <visual>
+      <origin xyz="1.22465e-18 -4.44089e-16 0.025" rpy="1.5708 -1.77976e-16 -4.5044e-28"/>
+      <geometry>
+        <mesh filename="../meshes/left_wrist_roll_visual.stl"/>
+      </geometry>
+      <material name="left_wrist_roll_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_wrist_yaw -->
+  <link name="left_wrist_yaw">
+    <inertial>
+      <origin xyz="-5.55112e-17 4.60472e-19 -0.025" rpy="0 0 0"/>
+      <mass value="0.0779115"/>
+      <inertia ixx="2.40227e-05" ixy="-1.47189e-37" ixz="3.1773e-49" iyy="1.55823e-05" iyz="-6.6381e-49" izz="2.40227e-05"/>
+    </inertial>
+    <!-- Part left_wrist_yaw_parts -->
+    <visual>
+      <origin xyz="-5.55112e-17 4.60472e-19 -0.025" rpy="3.09233e-28 -2.62691e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_wrist_yaw_visual.stl"/>
+      </geometry>
+      <material name="left_wrist_yaw_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_palm -->
+  <link name="left_palm">
+    <inertial>
+      <origin xyz="-0.0475 5.30456e-47 -0.04" rpy="0 0 0"/>
+      <mass value="0.03255"/>
+      <inertia ixx="7.39156e-06" ixy="6.4938e-48" ixz="5.12054e-38" iyy="1.01041e-05" iyz="3.10136e-49" izz="3.93312e-06"/>
+    </inertial>
+    <!-- Part left_palm_parts -->
+    <collision>
+      <origin xyz="-0.072 -3.85911e-29 -0.025" rpy="1.5708 4.67747e-55 -6.44597e-44"/>
+      <geometry>
+        <box size="0.1 0.06 0.015"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0475 0 -0.04" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_palm_visual.stl"/>
+      </geometry>
+      <material name="left_palm_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_1_mcp -->
+  <link name="left_finger_1_mcp">
+    <inertial>
+      <origin xyz="-0.0025 -2.22045e-16 -0.006" rpy="0 0 0"/>
+      <mass value="0.000744"/>
+      <inertia ixx="1.5128e-08" ixy="-1.27335e-54" ixz="1.61323e-23" iyy="1.0478e-08" iyz="-1.48621e-51" izz="7.75e-09"/>
+    </inertial>
+    <!-- Part left_finger_1_mcp_parts -->
+    <visual>
+      <origin xyz="-0.0025 -2.22045e-16 -0.006" rpy="-1.5708 -0.785398 -3.14159"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_1_mcp_visual.stl"/>
+      </geometry>
+      <material name="left_finger_1_mcp_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_1_proximal -->
+  <link name="left_finger_1_proximal">
+    <inertial>
+      <origin xyz="-0.00707107 0.00707107 0.005" rpy="0 0 0"/>
+      <mass value="0.002976"/>
+      <inertia ixx="9.2256e-08" ixy="3.1744e-08" ixz="3.85739e-51" iyy="9.2256e-08" iyz="2.48013e-51" izz="1.34912e-07"/>
+    </inertial>
+    <!-- Part left_finger_1_proximal_parts -->
+    <visual>
+      <origin xyz="-0.00707107 0.00707107 0.005" rpy="-4.16519e-28 7.25752e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_1_proximal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_1_proximal_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_1_intermediate -->
+  <link name="left_finger_1_intermediate">
+    <inertial>
+      <origin xyz="-0.01 -2.22045e-16 -0.005" rpy="0 0 0"/>
+      <mass value="0.001984"/>
+      <inertia ixx="2.71147e-08" ixy="1.30161e-50" ixz="5.73928e-23" iyy="8.26667e-08" iyz="4.47613e-50" izz="7.67147e-08"/>
+    </inertial>
+    <!-- Part left_finger_1_intermediate_parts -->
+    <visual>
+      <origin xyz="-0.01 -2.22045e-16 -0.005" rpy="-1.5708 -0.785398 3.14159"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_1_intermediate_visual.stl"/>
+      </geometry>
+      <material name="left_finger_1_intermediate_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_1_distal -->
+  <link name="left_finger_1_distal">
+    <inertial>
+      <origin xyz="-0.0075 2.22045e-16 -0.005" rpy="0 0 0"/>
+      <mass value="0.001488"/>
+      <inertia ixx="2.0336e-08" ixy="-3.97607e-51" ixz="3.29528e-24" iyy="4.03e-08" iyz="-2.01005e-51" izz="3.5836e-08"/>
+    </inertial>
+    <!-- Part left_finger_1_distal_parts -->
+    <visual>
+      <origin xyz="-0.0075 2.22045e-16 -0.005" rpy="-1.5708 -0.785398 3.14159"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_1_distal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_1_distal_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from left_finger_1_intermediate to left_finger_1_distal -->
+  <joint name="left_hand_finger1_joint4" type="revolute">
+    <origin xyz="-0.022 0 1.66533e-16" rpy="3.33291e-27 -6.04421e-16 -5.2434e-29"/>
+    <parent link="left_finger_1_intermediate"/>
+    <child link="left_finger_1_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_1_proximal to left_finger_1_intermediate -->
+  <joint name="left_hand_finger1_joint3" type="revolute">
+    <origin xyz="-0.0120208 0.0190919 0.005" rpy="-1.5708 -1.7069e-28 -0.785398"/>
+    <parent link="left_finger_1_proximal"/>
+    <child link="left_finger_1_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_1_mcp to left_finger_1_proximal -->
+  <joint name="left_hand_finger1_joint2" type="revolute">
+    <origin xyz="-0.007 0.005 -0.006" rpy="1.5708 -0.785398 1.65558e-27"/>
+    <parent link="left_finger_1_mcp"/>
+    <child link="left_finger_1_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_palm to left_finger_1_mcp -->
+  <joint name="left_hand_finger1_joint1" type="revolute">
+    <origin xyz="-0.0307574 0 -0.00575736" rpy="1.62322e-27 0.785398 2.52435e-29"/>
+    <parent link="left_palm"/>
+    <child link="left_finger_1_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link left_finger_2_mcp -->
+  <link name="left_finger_2_mcp">
+    <inertial>
+      <origin xyz="-0.0025 2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="-1.33638e-51" ixz="1.22097e-40" iyy="3.67867e-09" iyz="3.12313e-52" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part left_finger_2_mcp_parts -->
+    <visual>
+      <origin xyz="-0.0025 2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_2_mcp_visual.stl"/>
+      </geometry>
+      <material name="left_finger_2_mcp_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_2_proximal -->
+  <link name="left_finger_2_proximal">
+    <inertial>
+      <origin xyz="-0.0125 -3.48724e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.00248"/>
+      <inertia ixx="3.38933e-08" ixy="5.59645e-39" ixz="-3.88269e-50" iyy="1.49833e-07" iyz="-2.60251e-50" izz="1.42393e-07"/>
+    </inertial>
+    <!-- Part left_finger_2_proximal_parts -->
+    <visual>
+      <origin xyz="-0.0125 -3.46945e-18 0.005" rpy="-1.03183e-27 -3.17122e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_2_proximal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_2_proximal_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_2_intermediate -->
+  <link name="left_finger_2_intermediate">
+    <inertial>
+      <origin xyz="-0.01 -9.78305e-47 -0.003" rpy="0 0 0"/>
+      <mass value="0.0011904"/>
+      <inertia ixx="9.92e-09" ixy="-2.26918e-51" ixz="9.39582e-24" iyy="4.32512e-08" iyz="1.44966e-51" izz="4.60288e-08"/>
+    </inertial>
+    <!-- Part left_finger_2_intermediate_parts -->
+    <visual>
+      <origin xyz="-0.01 0 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_2_intermediate_visual.stl"/>
+      </geometry>
+      <material name="left_finger_2_intermediate_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_2_distal -->
+  <link name="left_finger_2_distal">
+    <inertial>
+      <origin xyz="-0.005 1.13639e-46 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="-6.68191e-52" ixz="5.37764e-25" iyy="5.16667e-09" iyz="-4.02231e-52" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part left_finger_2_distal_parts -->
+    <visual>
+      <origin xyz="-0.005 0 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_2_distal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_2_distal_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from left_finger_2_intermediate to left_finger_2_distal -->
+  <joint name="left_hand_finger2_joint4" type="revolute">
+    <origin xyz="-0.022 0 -0.0005" rpy="-2.11415e-28 8.67362e-17 1.02552e-29"/>
+    <parent link="left_finger_2_intermediate"/>
+    <child link="left_finger_2_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_2_proximal to left_finger_2_intermediate -->
+  <joint name="left_hand_finger2_joint3" type="revolute">
+    <origin xyz="-0.027 0.003 0.005" rpy="-1.5708 -2.44547e-29 2.60209e-16"/>
+    <parent link="left_finger_2_proximal"/>
+    <child link="left_finger_2_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_2_mcp to left_finger_2_proximal -->
+  <joint name="left_hand_finger2_joint2" type="revolute">
+    <origin xyz="-0.007 0.005 -0.004" rpy="1.5708 -1.54114e-28 2.42338e-27"/>
+    <parent link="left_finger_2_mcp"/>
+    <child link="left_finger_2_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_palm to left_finger_2_mcp -->
+  <joint name="left_hand_finger2_joint1" type="revolute">
+    <origin xyz="-0.067 0 -0.016" rpy="-3.15544e-29 -6.12323e-17 -3.47099e-29"/>
+    <parent link="left_palm"/>
+    <child link="left_finger_2_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link left_finger_3_mcp -->
+  <link name="left_finger_3_mcp">
+    <inertial>
+      <origin xyz="-0.0025 2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="2.86157e-52" ixz="-2.79637e-25" iyy="3.67867e-09" iyz="3.44459e-52" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part left_finger_3_mcp_parts -->
+    <visual>
+      <origin xyz="-0.0025 2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_3_mcp_visual.stl"/>
+      </geometry>
+      <material name="left_finger_3_mcp_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_3_proximal -->
+  <link name="left_finger_3_proximal">
+    <inertial>
+      <origin xyz="-0.015 -3.19538e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.002976"/>
+      <inertia ixx="4.0672e-08" ixy="1.08372e-40" ixz="2.43826e-51" iyy="2.48e-07" iyz="3.17467e-50" izz="2.39072e-07"/>
+    </inertial>
+    <!-- Part left_finger_3_proximal_parts -->
+    <visual>
+      <origin xyz="-0.015 -3.46945e-18 0.005" rpy="1.42784e-28 -3.50649e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_3_proximal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_3_proximal_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_3_intermediate -->
+  <link name="left_finger_3_intermediate">
+    <inertial>
+      <origin xyz="-0.0125 -4.94107e-47 -0.003" rpy="0 0 0"/>
+      <mass value="0.001488"/>
+      <inertia ixx="1.24e-08" ixy="-3.34096e-52" ixz="2.53395e-24" iyy="8.1964e-08" iyz="-8.33428e-51" izz="8.5436e-08"/>
+    </inertial>
+    <!-- Part left_finger_3_intermediate_parts -->
+    <visual>
+      <origin xyz="-0.0125 0 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_3_intermediate_visual.stl"/>
+      </geometry>
+      <material name="left_finger_3_intermediate_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_3_distal -->
+  <link name="left_finger_3_distal">
+    <inertial>
+      <origin xyz="-0.005 -2.22045e-16 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="8.35239e-53" ixz="-8.39001e-41" iyy="5.16667e-09" iyz="-5.1609e-52" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part left_finger_3_distal_parts -->
+    <visual>
+      <origin xyz="-0.005 -2.22045e-16 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_3_distal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_3_distal_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from left_finger_3_intermediate to left_finger_3_distal -->
+  <joint name="left_hand_finger3_joint4" type="revolute">
+    <origin xyz="-0.027 0 -0.0005" rpy="3.64454e-28 3.46945e-17 3.15544e-30"/>
+    <parent link="left_finger_3_intermediate"/>
+    <child link="left_finger_3_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_3_proximal to left_finger_3_intermediate -->
+  <joint name="left_hand_finger3_joint3" type="revolute">
+    <origin xyz="-0.032 0.003 0.005" rpy="-1.5708 -1.38051e-29 3.46945e-17"/>
+    <parent link="left_finger_3_proximal"/>
+    <child link="left_finger_3_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_3_mcp to left_finger_3_proximal -->
+  <joint name="left_hand_finger3_joint2" type="revolute">
+    <origin xyz="-0.007 0.005 -0.004" rpy="1.5708 1.73472e-16 1.74338e-28"/>
+    <parent link="left_finger_3_mcp"/>
+    <child link="left_finger_3_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_palm to left_finger_3_mcp -->
+  <joint name="left_hand_finger3_joint1" type="revolute">
+    <origin xyz="-0.067 0 -0.031" rpy="-1.08863e-28 -2.34705e-16 1.03972e-27"/>
+    <parent link="left_palm"/>
+    <child link="left_finger_3_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link left_finger_4_mcp -->
+  <link name="left_finger_4_mcp">
+    <inertial>
+      <origin xyz="-0.0025 -2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="-1.33638e-51" ixz="1.079e-40" iyy="3.67867e-09" iyz="4.26505e-52" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part left_finger_4_mcp_parts -->
+    <visual>
+      <origin xyz="-0.0025 -2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_4_mcp_visual.stl"/>
+      </geometry>
+      <material name="left_finger_4_mcp_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_4_proximal -->
+  <link name="left_finger_4_proximal">
+    <inertial>
+      <origin xyz="-0.015 -6.66483e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.002976"/>
+      <inertia ixx="4.0672e-08" ixy="-1.01367e-39" ixz="-5.34553e-51" iyy="2.48e-07" iyz="-1.06911e-50" izz="2.39072e-07"/>
+    </inertial>
+    <!-- Part left_finger_4_proximal_parts -->
+    <visual>
+      <origin xyz="-0.015 -6.93889e-18 0.005" rpy="-1.00659e-27 -3.64454e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_4_proximal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_4_proximal_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_4_intermediate -->
+  <link name="left_finger_4_intermediate">
+    <inertial>
+      <origin xyz="-0.01 1.66539e-47 -0.003" rpy="0 0 0"/>
+      <mass value="0.0011904"/>
+      <inertia ixx="9.92e-09" ixy="4.00915e-51" ixz="5.63749e-23" iyy="4.32512e-08" iyz="-8.25576e-52" izz="4.60288e-08"/>
+    </inertial>
+    <!-- Part left_finger_4_intermediate_parts -->
+    <visual>
+      <origin xyz="-0.01 0 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_4_intermediate_visual.stl"/>
+      </geometry>
+      <material name="left_finger_4_intermediate_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_4_distal -->
+  <link name="left_finger_4_distal">
+    <inertial>
+      <origin xyz="-0.005 2.22045e-16 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="2.23212e-51" ixz="4.30211e-24" iyy="5.16667e-09" iyz="3.62857e-52" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part left_finger_4_distal_parts -->
+    <visual>
+      <origin xyz="-0.005 2.22045e-16 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_4_distal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_4_distal_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from left_finger_4_intermediate to left_finger_4_distal -->
+  <joint name="left_hand_finger4_joint4" type="revolute">
+    <origin xyz="-0.022 0 -0.0005" rpy="9.6241e-29 1.73472e-16 1.97215e-29"/>
+    <parent link="left_finger_4_intermediate"/>
+    <child link="left_finger_4_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_4_proximal to left_finger_4_intermediate -->
+  <joint name="left_hand_finger4_joint3" type="revolute">
+    <origin xyz="-0.032 0.003 0.005" rpy="-1.5708 1.10441e-29 1.56125e-15"/>
+    <parent link="left_finger_4_proximal"/>
+    <child link="left_finger_4_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_4_mcp to left_finger_4_proximal -->
+  <joint name="left_hand_finger4_joint2" type="revolute">
+    <origin xyz="-0.007 0.005 -0.004" rpy="1.5708 -1.59325e-28 2.39814e-27"/>
+    <parent link="left_finger_4_mcp"/>
+    <child link="left_finger_4_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_palm to left_finger_4_mcp -->
+  <joint name="left_hand_finger4_joint1" type="revolute">
+    <origin xyz="-0.067 0 -0.046" rpy="-3.15544e-29 -6.12323e-17 -3.47099e-29"/>
+    <parent link="left_palm"/>
+    <child link="left_finger_4_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link left_finger_5_mcp -->
+  <link name="left_finger_5_mcp">
+    <inertial>
+      <origin xyz="-0.0025 -5.23087e-46 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="-1.33638e-51" ixz="1.60981e-40" iyy="3.67867e-09" iyz="4.03667e-52" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part left_finger_5_mcp_parts -->
+    <visual>
+      <origin xyz="-0.0025 0 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_5_mcp_visual.stl"/>
+      </geometry>
+      <material name="left_finger_5_mcp_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_5_proximal -->
+  <link name="left_finger_5_proximal">
+    <inertial>
+      <origin xyz="-0.01 -3.7791e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.001984"/>
+      <inertia ixx="2.71147e-08" ixy="-1.84496e-39" ixz="-3.10971e-50" iyy="8.26667e-08" iyz="-1.08871e-50" izz="7.67147e-08"/>
+    </inertial>
+    <!-- Part left_finger_5_proximal_parts -->
+    <visual>
+      <origin xyz="-0.01 -6.93889e-18 0.005" rpy="-1.06654e-27 -3.12783e-28 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_5_proximal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_5_proximal_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_5_intermediate -->
+  <link name="left_finger_5_intermediate">
+    <inertial>
+      <origin xyz="-0.0075 -2.22045e-16 -0.003" rpy="0 0 0"/>
+      <mass value="0.0008928"/>
+      <inertia ixx="7.44e-09" ixy="2.00071e-51" ixz="-8.20847e-40" iyy="1.94184e-08" iyz="1.42249e-51" izz="2.15016e-08"/>
+    </inertial>
+    <!-- Part left_finger_5_intermediate_parts -->
+    <visual>
+      <origin xyz="-0.0075 -2.22045e-16 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_5_intermediate_visual.stl"/>
+      </geometry>
+      <material name="left_finger_5_intermediate_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link left_finger_5_distal -->
+  <link name="left_finger_5_distal">
+    <inertial>
+      <origin xyz="-0.005 -5.94107e-47 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="1.50755e-51" ixz="-3.98606e-41" iyy="5.16667e-09" iyz="4.28894e-52" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part left_finger_5_distal_parts -->
+    <visual>
+      <origin xyz="-0.005 0 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/left_finger_5_distal_visual.stl"/>
+      </geometry>
+      <material name="left_finger_5_distal_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from left_finger_5_intermediate to left_finger_5_distal -->
+  <joint name="left_hand_finger5_joint4" type="revolute">
+    <origin xyz="-0.017 0 -0.0005" rpy="-1.75127e-28 -2.52974e-30 -2.76101e-29"/>
+    <parent link="left_finger_5_intermediate"/>
+    <child link="left_finger_5_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_5_proximal to left_finger_5_intermediate -->
+  <joint name="left_hand_finger5_joint3" type="revolute">
+    <origin xyz="-0.022 0.003 0.005" rpy="-1.5708 -1.53828e-29 -2.83489e-28"/>
+    <parent link="left_finger_5_proximal"/>
+    <child link="left_finger_5_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_finger_5_mcp to left_finger_5_proximal -->
+  <joint name="left_hand_finger5_joint2" type="revolute">
+    <origin xyz="-0.007 0.005 -0.004" rpy="1.5708 -1.62147e-28 2.45809e-27"/>
+    <parent link="left_finger_5_mcp"/>
+    <child link="left_finger_5_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_palm to left_finger_5_mcp -->
+  <joint name="left_hand_finger5_joint1" type="revolute">
+    <origin xyz="-0.067 0 -0.061" rpy="-3.15544e-29 -6.12323e-17 -3.47099e-29"/>
+    <parent link="left_palm"/>
+    <child link="left_finger_5_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_wrist_yaw to left_palm -->
+  <joint name="left_wrist_pitch" type="revolute">
+    <origin xyz="-5.55112e-17 0.025 -0.025" rpy="-1.5708 -1.04761e-27 -5.55112e-17"/>
+    <parent link="left_wrist_yaw"/>
+    <child link="left_palm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_wrist_roll to left_wrist_yaw -->
+  <joint name="left_wrist_roll" type="revolute">
+    <origin xyz="1.34988e-18 -0.025 0.025" rpy="1.5708 1.5708 0"/>
+    <parent link="left_wrist_roll"/>
+    <child link="left_wrist_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_elbow_pitch to left_wrist_roll -->
+  <joint name="left_wrist_yaw" type="revolute">
+    <origin xyz="-0.155 -1.9622e-18 -0.025" rpy="-1.5708 7.88861e-31 1.5708"/>
+    <parent link="left_elbow_pitch"/>
+    <child link="left_wrist_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_shoulder_yaw to left_elbow_pitch -->
+  <joint name="left_elbow_pitch" type="revolute">
+    <origin xyz="1.83697e-18 -0.025 0.03" rpy="1.5708 1.5708 0"/>
+    <parent link="left_shoulder_yaw"/>
+    <child link="left_elbow_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-2.35619" upper="0"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_shoulder_roll to left_shoulder_yaw -->
+  <joint name="left_shoulder_yaw" type="revolute">
+    <origin xyz="-0.176 0 -0.025" rpy="-1.72563e-29 -1.5708 0"/>
+    <parent link="left_shoulder_roll"/>
+    <child link="left_shoulder_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from left_shoulder_pitch to left_shoulder_roll -->
+  <joint name="left_shoulder_roll" type="revolute">
+    <origin xyz="0.025 -2.22045e-16 0.04" rpy="3.69779e-31 1.5708 0"/>
+    <parent link="left_shoulder_pitch"/>
+    <child link="left_shoulder_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-3.14159" upper="0.261799"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from shoulder_base to left_shoulder_pitch -->
+  <joint name="left_shoulder_pitch" type="revolute">
+    <origin xyz="-0.052 -0.16948 -0.025" rpy="2.52353e-32 -1.5708 0"/>
+    <parent link="shoulder_base"/>
+    <child link="left_shoulder_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-3.14159" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link right_shoulder_pitch -->
+  <link name="right_shoulder_pitch">
+    <inertial>
+      <origin xyz="3.37024e-18 2.22045e-16 0.04" rpy="0 0 0"/>
+      <mass value="0.311646"/>
+      <inertia ixx="0.000249317" ixy="0" ixz="1.8677e-36" iyy="0.000189585" iyz="-8.29141e-49" izz="0.000189585"/>
+    </inertial>
+    <!-- Part right_shoulder_pitch_parts -->
+    <visual>
+      <origin xyz="3.37024e-18 2.22045e-16 0.04" rpy="-1.5708 6.12323e-17 -1.19826e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_shoulder_pitch_visual.stl"/>
+      </geometry>
+      <material name="right_shoulder_pitch_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_shoulder_roll -->
+  <link name="right_shoulder_roll">
+    <inertial>
+      <origin xyz="0.108 0 -0.025" rpy="0 0 0"/>
+      <mass value="0.476818"/>
+      <inertia ixx="0.000214568" ixy="-7.10037e-48" ixz="-1.1114e-36" iyy="0.00084222" iyz="-1.26577e-34" izz="0.00084222"/>
+    </inertial>
+    <!-- Part right_shoulder_roll_parts -->
+    <collision>
+      <origin xyz="0.108 1.13578e-43 -0.025" rpy="1.5708 -5.60446e-32 1.5708"/>
+      <geometry>
+        <cylinder length="0.08" radius="0.03"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.108 0 -0.025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_shoulder_roll_visual.stl"/>
+      </geometry>
+      <material name="right_shoulder_roll_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_shoulder_yaw -->
+  <link name="right_shoulder_yaw">
+    <inertial>
+      <origin xyz="1.83697e-18 -2.24673e-47 0.03" rpy="0 0 0"/>
+      <mass value="0.175301"/>
+      <inertia ixx="7.59637e-05" ixy="-1.83079e-35" ixz="-1.66125e-36" iyy="7.88854e-05" iyz="2.20401e-49" izz="7.59637e-05"/>
+    </inertial>
+    <!-- Part right_shoulder_yaw_parts -->
+    <visual>
+      <origin xyz="1.83697e-18 0 0.03" rpy="-1.5708 1.72255e-16 -1.82276e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_shoulder_yaw_visual.stl"/>
+      </geometry>
+      <material name="right_shoulder_yaw_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_elbow_pitch -->
+  <link name="right_elbow_pitch">
+    <inertial>
+      <origin xyz="0.0925 -1.83697e-18 -0.025" rpy="0 0 0"/>
+      <mass value="0.304342"/>
+      <inertia ixx="9.51068e-05" ixy="2.11858e-35" ixz="-3.6801e-36" iyy="0.000443832" iyz="-1.21039e-35" izz="0.000443832"/>
+    </inertial>
+    <!-- Part right_elbow_pitch_parts -->
+    <collision>
+      <origin xyz="0.102 -1.83697e-18 -0.025" rpy="4.00823e-32 1.5708 0"/>
+      <geometry>
+        <cylinder length="0.08" radius="0.025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0925 -1.83697e-18 -0.025" rpy="7.02563e-17 2.07256e-15 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_elbow_pitch_visual.stl"/>
+      </geometry>
+      <material name="right_elbow_pitch_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_wrist_roll -->
+  <link name="right_wrist_roll">
+    <inertial>
+      <origin xyz="1.22465e-18 6.66134e-16 0.025" rpy="0 0 0"/>
+      <mass value="0.0779115"/>
+      <inertia ixx="2.40227e-05" ixy="0" ixz="3.39547e-36" iyy="1.55823e-05" iyz="-8.25875e-38" izz="2.40227e-05"/>
+    </inertial>
+    <!-- Part right_wrist_roll_parts -->
+    <visual>
+      <origin xyz="1.22465e-18 6.66134e-16 0.025" rpy="-1.5708 8.88178e-16 -1.2529e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_wrist_roll_visual.stl"/>
+      </geometry>
+      <material name="right_wrist_roll_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_wrist_yaw -->
+  <link name="right_wrist_yaw">
+    <inertial>
+      <origin xyz="5.55112e-17 4.60472e-19 -0.025" rpy="0 0 0"/>
+      <mass value="0.0779115"/>
+      <inertia ixx="2.40227e-05" ixy="-2.16444e-34" ixz="6.01853e-36" iyy="1.55823e-05" iyz="6.01853e-36" izz="2.40227e-05"/>
+    </inertial>
+    <!-- Part right_wrist_yaw_parts -->
+    <visual>
+      <origin xyz="5.55112e-17 4.60472e-19 -0.025" rpy="-1.63346e-15 1.52807e-15 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_wrist_yaw_visual.stl"/>
+      </geometry>
+      <material name="right_wrist_yaw_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_palm -->
+  <link name="right_palm">
+    <inertial>
+      <origin xyz="0.0475 2.22045e-16 -0.04" rpy="0 0 0"/>
+      <mass value="0.03255"/>
+      <inertia ixx="7.39156e-06" ixy="1.71367e-37" ixz="6.65619e-36" iyy="1.01041e-05" iyz="-1.55144e-36" izz="3.93312e-06"/>
+    </inertial>
+    <!-- Part right_palm_parts -->
+    <collision>
+      <origin xyz="-1.028 1.81999e-16 -0.025" rpy="1.5708 -5.41428e-30 5.77779e-34"/>
+      <geometry>
+        <box size="0.1 0.06 0.015"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0475 2.22045e-16 -0.04" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_palm_visual.stl"/>
+      </geometry>
+      <material name="right_palm_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_1_mcp -->
+  <link name="right_finger_1_mcp">
+    <inertial>
+      <origin xyz="0.0025 -4.44089e-16 -0.006" rpy="0 0 0"/>
+      <mass value="0.000744"/>
+      <inertia ixx="1.5128e-08" ixy="2.93874e-39" ixz="-1.7207e-23" iyy="1.0478e-08" iyz="-2.14512e-39" izz="7.75e-09"/>
+    </inertial>
+    <!-- Part right_finger_1_mcp_parts -->
+    <visual>
+      <origin xyz="0.0025 -4.44089e-16 -0.006" rpy="1.5708 -0.785398 2.16102e-15"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_1_mcp_visual.stl"/>
+      </geometry>
+      <material name="right_finger_1_mcp_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_1_proximal -->
+  <link name="right_finger_1_proximal">
+    <inertial>
+      <origin xyz="0.00707107 0.00707107 0.005" rpy="0 0 0"/>
+      <mass value="0.002976"/>
+      <inertia ixx="9.2256e-08" ixy="-3.1744e-08" ixz="7.13945e-39" iyy="9.2256e-08" iyz="-1.64003e-38" izz="1.34912e-07"/>
+    </inertial>
+    <!-- Part right_finger_1_proximal_parts -->
+    <visual>
+      <origin xyz="0.00707107 0.00707107 0.005" rpy="5.54244e-16 -4.23489e-16 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_1_proximal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_1_proximal_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_1_intermediate -->
+  <link name="right_finger_1_intermediate">
+    <inertial>
+      <origin xyz="0.01 -2.22045e-16 -0.005" rpy="0 0 0"/>
+      <mass value="0.001984"/>
+      <inertia ixx="2.71147e-08" ixy="1.65719e-39" ixz="-5.89847e-23" iyy="8.26667e-08" iyz="-8.68683e-39" izz="7.67147e-08"/>
+    </inertial>
+    <!-- Part right_finger_1_intermediate_parts -->
+    <visual>
+      <origin xyz="0.01 -2.22045e-16 -0.005" rpy="1.5708 -0.785398 -2.13894e-16"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_1_intermediate_visual.stl"/>
+      </geometry>
+      <material name="right_finger_1_intermediate_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_1_distal -->
+  <link name="right_finger_1_distal">
+    <inertial>
+      <origin xyz="0.0075 2.22045e-16 -0.005" rpy="0 0 0"/>
+      <mass value="0.001488"/>
+      <inertia ixx="2.0336e-08" ixy="3.62537e-39" ixz="3.03604e-24" iyy="4.03e-08" iyz="4.17248e-39" izz="3.5836e-08"/>
+    </inertial>
+    <!-- Part right_finger_1_distal_parts -->
+    <visual>
+      <origin xyz="0.0075 2.22045e-16 -0.005" rpy="1.5708 -0.785398 -2.13894e-16"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_1_distal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_1_distal_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from right_finger_1_intermediate to right_finger_1_distal -->
+  <joint name="right_hand_finger1_joint4" type="revolute">
+    <origin xyz="0.022 2.22045e-16 0" rpy="-3.8501e-16 8.21077e-17 -3.8501e-16"/>
+    <parent link="right_finger_1_intermediate"/>
+    <child link="right_finger_1_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_1_proximal to right_finger_1_intermediate -->
+  <joint name="right_hand_finger1_joint3" type="revolute">
+    <origin xyz="0.0120208 0.0190919 0.005" rpy="-1.5708 3.08487e-26 0.785398"/>
+    <parent link="right_finger_1_proximal"/>
+    <child link="right_finger_1_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_1_mcp to right_finger_1_proximal -->
+  <joint name="right_hand_finger1_joint2" type="revolute">
+    <origin xyz="0.007 0.005 -0.006" rpy="1.5708 0.785398 -7.01022e-16"/>
+    <parent link="right_finger_1_mcp"/>
+    <child link="right_finger_1_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_palm to right_finger_1_mcp -->
+  <joint name="right_hand_finger1_joint1" type="revolute">
+    <origin xyz="0.0307574 1.02141e-14 -0.00575736" rpy="4.15847e-28 -0.785398 1.9699e-26"/>
+    <parent link="right_palm"/>
+    <child link="right_finger_1_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link right_finger_2_mcp -->
+  <link name="right_finger_2_mcp">
+    <inertial>
+      <origin xyz="0.0025 2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="6.05929e-42" ixz="1.46161e-38" iyy="3.67867e-09" iyz="-1.76001e-39" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part right_finger_2_mcp_parts -->
+    <visual>
+      <origin xyz="0.0025 2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_2_mcp_visual.stl"/>
+      </geometry>
+      <material name="right_finger_2_mcp_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_2_proximal -->
+  <link name="right_finger_2_proximal">
+    <inertial>
+      <origin xyz="0.0125 -3.45252e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.00248"/>
+      <inertia ixx="3.38933e-08" ixy="3.00949e-38" ixz="9.35587e-40" iyy="1.49833e-07" iyz="5.29917e-38" izz="1.42393e-07"/>
+    </inertial>
+    <!-- Part right_finger_2_proximal_parts -->
+    <visual>
+      <origin xyz="0.0125 -3.46945e-18 0.005" rpy="5.46438e-17 1.69786e-15 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_2_proximal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_2_proximal_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_2_intermediate -->
+  <link name="right_finger_2_intermediate">
+    <inertial>
+      <origin xyz="0.01 2.22045e-16 -0.003" rpy="0 0 0"/>
+      <mass value="0.0011904"/>
+      <inertia ixx="9.92e-09" ixy="3.46619e-40" ixz="-9.39582e-24" iyy="4.32512e-08" iyz="2.27356e-38" izz="4.60288e-08"/>
+    </inertial>
+    <!-- Part right_finger_2_intermediate_parts -->
+    <visual>
+      <origin xyz="0.01 2.22045e-16 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_2_intermediate_visual.stl"/>
+      </geometry>
+      <material name="right_finger_2_intermediate_parts_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_2_distal -->
+  <link name="right_finger_2_distal">
+    <inertial>
+      <origin xyz="0.005 2.61338e-36 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="-1.18247e-41" ixz="-5.37764e-25" iyy="5.16667e-09" iyz="1.96067e-39" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part right_finger_2_distal_parts -->
+    <visual>
+      <origin xyz="0.005 0 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_2_distal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_2_distal_parts_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from right_finger_2_intermediate to right_finger_2_distal -->
+  <joint name="right_hand_finger2_joint4" type="revolute">
+    <origin xyz="0.022 2.22045e-16 -0.0005" rpy="-4.996e-16 2.42861e-17 -5.35975e-29"/>
+    <parent link="right_finger_2_intermediate"/>
+    <child link="right_finger_2_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_2_proximal to right_finger_2_intermediate -->
+  <joint name="right_hand_finger2_joint3" type="revolute">
+    <origin xyz="0.027 0.003 0.005" rpy="-1.5708 -5.73629e-28 -1.25941e-15"/>
+    <parent link="right_finger_2_proximal"/>
+    <child link="right_finger_2_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_2_mcp to right_finger_2_proximal -->
+  <joint name="right_hand_finger2_joint2" type="revolute">
+    <origin xyz="0.007 0.005 -0.004" rpy="1.5708 -5.75536e-14 3.90313e-18"/>
+    <parent link="right_finger_2_mcp"/>
+    <child link="right_finger_2_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_palm to right_finger_2_mcp -->
+  <joint name="right_hand_finger2_joint1" type="revolute">
+    <origin xyz="0.067 -7.54952e-15 -0.016" rpy="3.71401e-28 -6.12323e-17 1.90763e-26"/>
+    <parent link="right_palm"/>
+    <child link="right_finger_2_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link right_finger_3_mcp -->
+  <link name="right_finger_3_mcp">
+    <inertial>
+      <origin xyz="0.0025 2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="2.93874e-39" ixz="2.79637e-25" iyy="3.67867e-09" iyz="4.95694e-40" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part right_finger_3_mcp_parts -->
+    <visual>
+      <origin xyz="0.0025 2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_3_mcp_visual.stl"/>
+      </geometry>
+      <material name="right_finger_3_mcp_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_3_proximal -->
+  <link name="right_finger_3_proximal">
+    <inertial>
+      <origin xyz="0.015 -3.41825e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.002976"/>
+      <inertia ixx="4.0672e-08" ixy="8.0945e-39" ixz="2.00903e-40" iyy="2.48e-07" iyz="-3.85797e-38" izz="2.39072e-07"/>
+    </inertial>
+    <!-- Part right_finger_3_proximal_parts -->
+    <visual>
+      <origin xyz="0.015 -3.46945e-18 0.005" rpy="5.46438e-17 6.9866e-16 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_3_proximal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_3_proximal_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_3_intermediate -->
+  <link name="right_finger_3_intermediate">
+    <inertial>
+      <origin xyz="0.0125 -2.94098e-34 -0.003" rpy="0 0 0"/>
+      <mass value="0.001488"/>
+      <inertia ixx="1.24e-08" ixy="-7.52268e-40" ixz="-2.53395e-24" iyy="8.1964e-08" iyz="6.61006e-39" izz="8.5436e-08"/>
+    </inertial>
+    <!-- Part right_finger_3_intermediate_parts -->
+    <visual>
+      <origin xyz="0.0125 0 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_3_intermediate_visual.stl"/>
+      </geometry>
+      <material name="right_finger_3_intermediate_parts_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_3_distal -->
+  <link name="right_finger_3_distal">
+    <inertial>
+      <origin xyz="0.005 -2.22045e-16 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="-6.24608e-41" ixz="6.44072e-41" iyy="5.16667e-09" iyz="4.41557e-40" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part right_finger_3_distal_parts -->
+    <visual>
+      <origin xyz="0.005 -2.22045e-16 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_3_distal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_3_distal_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from right_finger_3_intermediate to right_finger_3_distal -->
+  <joint name="right_hand_finger3_joint4" type="revolute">
+    <origin xyz="0.027 0 -0.0005" rpy="3.14899e-29 -3.46945e-17 -1.32688e-28"/>
+    <parent link="right_finger_3_intermediate"/>
+    <child link="right_finger_3_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_3_proximal to right_finger_3_intermediate -->
+  <joint name="right_hand_finger3_joint3" type="revolute">
+    <origin xyz="0.032 0.003 0.005" rpy="-1.5708 -3.95616e-28 8.53484e-16"/>
+    <parent link="right_finger_3_proximal"/>
+    <child link="right_finger_3_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_3_mcp to right_finger_3_proximal -->
+  <joint name="right_hand_finger3_joint2" type="revolute">
+    <origin xyz="0.007 0.005 -0.004" rpy="1.5708 -5.70054e-14 1.128e-15"/>
+    <parent link="right_finger_3_mcp"/>
+    <child link="right_finger_3_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_palm to right_finger_3_mcp -->
+  <joint name="right_hand_finger3_joint1" type="revolute">
+    <origin xyz="0.067 2.22045e-16 -0.031" rpy="4.41565e-28 1.1224e-16 -1.1241e-15"/>
+    <parent link="right_palm"/>
+    <child link="right_finger_3_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link right_finger_4_mcp -->
+  <link name="right_finger_4_mcp">
+    <inertial>
+      <origin xyz="0.0025 -2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="6.27296e-41" ixz="3.24643e-38" iyy="3.67867e-09" iyz="6.86863e-40" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part right_finger_4_mcp_parts -->
+    <visual>
+      <origin xyz="0.0025 -2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_4_mcp_visual.stl"/>
+      </geometry>
+      <material name="right_finger_4_mcp_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_4_proximal -->
+  <link name="right_finger_4_proximal">
+    <inertial>
+      <origin xyz="0.015 1.18917e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.002976"/>
+      <inertia ixx="4.0672e-08" ixy="-2.81106e-39" ixz="6.64018e-40" iyy="2.48e-07" iyz="-5.46267e-38" izz="2.39072e-07"/>
+    </inertial>
+    <!-- Part right_finger_4_proximal_parts -->
+    <visual>
+      <origin xyz="0.015 0 0.005" rpy="5.46438e-17 1.69786e-15 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_4_proximal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_4_proximal_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_4_intermediate -->
+  <link name="right_finger_4_intermediate">
+    <inertial>
+      <origin xyz="0.01 1.31473e-35 -0.003" rpy="0 0 0"/>
+      <mass value="0.0011904"/>
+      <inertia ixx="9.92e-09" ixy="-2.15713e-40" ixz="-5.63749e-23" iyy="4.32512e-08" iyz="-9.04286e-39" izz="4.60288e-08"/>
+    </inertial>
+    <!-- Part right_finger_4_intermediate_parts -->
+    <visual>
+      <origin xyz="0.01 0 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_4_intermediate_visual.stl"/>
+      </geometry>
+      <material name="right_finger_4_intermediate_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_4_distal -->
+  <link name="right_finger_4_distal">
+    <inertial>
+      <origin xyz="0.005 2.22045e-16 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="0" ixz="-4.30211e-24" iyy="5.16667e-09" iyz="-5.66955e-40" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part right_finger_4_distal_parts -->
+    <visual>
+      <origin xyz="0.005 2.22045e-16 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_4_distal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_4_distal_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from right_finger_4_intermediate to right_finger_4_distal -->
+  <joint name="right_hand_finger4_joint4" type="revolute">
+    <origin xyz="0.022 0 -0.0005" rpy="-3.37238e-29 -1.73472e-16 -9.789e-29"/>
+    <parent link="right_finger_4_intermediate"/>
+    <child link="right_finger_4_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_4_proximal to right_finger_4_intermediate -->
+  <joint name="right_hand_finger4_joint3" type="revolute">
+    <origin xyz="0.032 0.003 0.005" rpy="-1.5708 -9.83214e-29 -1.56125e-15"/>
+    <parent link="right_finger_4_proximal"/>
+    <child link="right_finger_4_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_4_mcp to right_finger_4_proximal -->
+  <joint name="right_hand_finger4_joint2" type="revolute">
+    <origin xyz="0.007 0.005 -0.004" rpy="1.5708 -5.7054e-14 3.90313e-18"/>
+    <parent link="right_finger_4_mcp"/>
+    <child link="right_finger_4_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_palm to right_finger_4_mcp -->
+  <joint name="right_hand_finger4_joint1" type="revolute">
+    <origin xyz="0.067 2.22045e-16 -0.046" rpy="-3.40807e-28 -6.12323e-17 1.97961e-26"/>
+    <parent link="right_palm"/>
+    <child link="right_finger_4_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link right_finger_5_mcp -->
+  <link name="right_finger_5_mcp">
+    <inertial>
+      <origin xyz="0.0025 -2.22045e-16 -0.004" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="6.77867e-09" ixy="1.68119e-41" ixz="-2.97566e-38" iyy="3.67867e-09" iyz="-5.7713e-40" izz="5.16667e-09"/>
+    </inertial>
+    <!-- Part right_finger_5_mcp_parts -->
+    <visual>
+      <origin xyz="0.0025 -2.22045e-16 -0.004" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_5_mcp_visual.stl"/>
+      </geometry>
+      <material name="right_finger_5_mcp_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_5_proximal -->
+  <link name="right_finger_5_proximal">
+    <inertial>
+      <origin xyz="0.01 -4.88845e-18 0.005" rpy="0 0 0"/>
+      <mass value="0.001984"/>
+      <inertia ixx="2.71147e-08" ixy="-1.62835e-39" ixz="1.14641e-39" iyy="8.26667e-08" iyz="-3.26012e-39" izz="7.67147e-08"/>
+    </inertial>
+    <!-- Part right_finger_5_proximal_parts -->
+    <visual>
+      <origin xyz="0.01 -6.93889e-18 0.005" rpy="5.46438e-17 1.69786e-15 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_5_proximal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_5_proximal_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_5_intermediate -->
+  <link name="right_finger_5_intermediate">
+    <inertial>
+      <origin xyz="0.0075 -4.44089e-16 -0.003" rpy="0 0 0"/>
+      <mass value="0.0008928"/>
+      <inertia ixx="7.44e-09" ixy="-8.4019e-41" ixz="2.84411e-41" iyy="1.94184e-08" iyz="-5.77073e-39" izz="2.15016e-08"/>
+    </inertial>
+    <!-- Part right_finger_5_intermediate_parts -->
+    <visual>
+      <origin xyz="0.0075 -2.22045e-16 -0.003" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_5_intermediate_visual.stl"/>
+      </geometry>
+      <material name="right_finger_5_intermediate_parts_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link right_finger_5_distal -->
+  <link name="right_finger_5_distal">
+    <inertial>
+      <origin xyz="0.005 5.31886e-33 -0.0025" rpy="0 0 0"/>
+      <mass value="0.000496"/>
+      <inertia ixx="3.67867e-09" ixy="-2.29589e-41" ixz="-2.92791e-41" iyy="5.16667e-09" iyz="2.31143e-39" izz="6.77867e-09"/>
+    </inertial>
+    <!-- Part right_finger_5_distal_parts -->
+    <visual>
+      <origin xyz="0.005 0 -0.0025" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/right_finger_5_distal_visual.stl"/>
+      </geometry>
+      <material name="right_finger_5_distal_parts_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from right_finger_5_intermediate to right_finger_5_distal -->
+  <joint name="right_hand_finger5_joint4" type="revolute">
+    <origin xyz="0.017 0 -0.0005" rpy="2.40997e-28 2.01817e-32 -1.15438e-28"/>
+    <parent link="right_finger_5_intermediate"/>
+    <child link="right_finger_5_distal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_5_proximal to right_finger_5_intermediate -->
+  <joint name="right_hand_finger5_joint3" type="revolute">
+    <origin xyz="0.022 0.003 0.005" rpy="-1.5708 -2.16317e-28 -6.96083e-31"/>
+    <parent link="right_finger_5_proximal"/>
+    <child link="right_finger_5_intermediate"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_finger_5_mcp to right_finger_5_proximal -->
+  <joint name="right_hand_finger5_joint2" type="revolute">
+    <origin xyz="0.007 0.005 -0.004" rpy="1.5708 -5.7054e-14 3.90313e-18"/>
+    <parent link="right_finger_5_mcp"/>
+    <child link="right_finger_5_proximal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_palm to right_finger_5_mcp -->
+  <joint name="right_hand_finger5_joint1" type="revolute">
+    <origin xyz="0.067 0 -0.061" rpy="-3.40807e-28 -6.12323e-17 1.97961e-26"/>
+    <parent link="right_palm"/>
+    <child link="right_finger_5_mcp"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="0" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_wrist_yaw to right_palm -->
+  <joint name="right_wrist_pitch" type="revolute">
+    <origin xyz="-2.9976e-15 0.025 -0.025" rpy="-1.5708 -1.69201e-15 5.41428e-30"/>
+    <parent link="right_wrist_yaw"/>
+    <child link="right_palm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_wrist_roll to right_wrist_yaw -->
+  <joint name="right_wrist_roll" type="revolute">
+    <origin xyz="1.22465e-18 0.025 0.025" rpy="-1.5708 -1.5708 0"/>
+    <parent link="right_wrist_roll"/>
+    <child link="right_wrist_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.349066" upper="0.349066"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_elbow_pitch to right_wrist_roll -->
+  <joint name="right_wrist_yaw" type="revolute">
+    <origin xyz="0.155 1.78385e-18 -0.025" rpy="1.5708 8.19657e-16 1.5708"/>
+    <parent link="right_elbow_pitch"/>
+    <child link="right_wrist_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_shoulder_yaw to right_elbow_pitch -->
+  <joint name="right_elbow_pitch" type="revolute">
+    <origin xyz="8.23975e-16 0.025 0.03" rpy="-1.5708 -1.5708 0"/>
+    <parent link="right_shoulder_yaw"/>
+    <child link="right_elbow_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0" upper="2.35619"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_shoulder_roll to right_shoulder_yaw -->
+  <joint name="right_shoulder_yaw" type="revolute">
+    <origin xyz="0.176 -2.22045e-16 -0.025" rpy="-3.14159 -1.5708 0"/>
+    <parent link="right_shoulder_roll"/>
+    <child link="right_shoulder_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-1.5708" upper="1.5708"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from right_shoulder_pitch to right_shoulder_roll -->
+  <joint name="right_shoulder_roll" type="revolute">
+    <origin xyz="0.025 -3.10862e-15 0.04" rpy="-3.14159 -1.5708 0"/>
+    <parent link="right_shoulder_pitch"/>
+    <child link="right_shoulder_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.261799" upper="3.14159"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from shoulder_base to right_shoulder_pitch -->
+  <joint name="right_shoulder_pitch" type="revolute">
+    <origin xyz="0.052 -0.16948 -0.025" rpy="3.14159 -1.5708 0"/>
+    <parent link="shoulder_base"/>
+    <child link="right_shoulder_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-3.14159" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Link neck_yaw -->
+  <link name="neck_yaw">
+    <inertial>
+      <origin xyz="1.05151e-18 -4.04428e-20 0.03" rpy="0 0 0"/>
+      <mass value="0.0779115"/>
+      <inertia ixx="2.40227e-05" ixy="1.24662e-37" ixz="-6.01853e-36" iyy="1.55823e-05" iyz="-3.76158e-37" izz="2.40227e-05"/>
+    </inertial>
+    <!-- Part neck_yaw_parts -->
+    <visual>
+      <origin xyz="1.05151e-18 -4.04428e-20 0.03" rpy="-1.56492e-15 1.66277e-16 1.5708"/>
+      <geometry>
+        <mesh filename="../meshes/neck_yaw_visual.stl"/>
+      </geometry>
+      <material name="neck_yaw_parts_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link neck_roll -->
+  <link name="neck_roll">
+    <inertial>
+      <origin xyz="1.01107e-18 -0.05 -0.035" rpy="0 0 0"/>
+      <mass value="0.0779115"/>
+      <inertia ixx="1.55823e-05" ixy="0" ixz="4.69277e-49" iyy="2.40227e-05" iyz="-9.63221e-38" izz="2.40227e-05"/>
+    </inertial>
+    <!-- Part neck_roll_parts -->
+    <visual>
+      <origin xyz="1.01107e-18 -0.05 -0.035" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="../meshes/neck_roll_visual.stl"/>
+      </geometry>
+      <material name="neck_roll_parts_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link head -->
+  <link name="head">
+    <inertial>
+      <origin xyz="0.01 0.06133 -0.025" rpy="0 0 0"/>
+      <mass value="4.73312"/>
+      <inertia ixx="0.018942" ixy="0" ixz="1.68442e-44" iyy="0.0161021" iyz="-2.26729e-34" izz="0.018942"/>
+    </inertial>
+    <!-- Part head_parts -->
+    <visual>
+      <origin xyz="0.01 0.06133 -0.025" rpy="-1.5708 6.30597e-27 -1.66277e-16"/>
+      <geometry>
+        <mesh filename="../meshes/head_visual.stl"/>
+      </geometry>
+      <material name="head_parts_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from neck_roll to head -->
+  <joint name="neck_pitch" type="revolute">
+    <origin xyz="0.025 -0.05 -0.035" rpy="3.14159 -1.5708 0"/>
+    <parent link="neck_roll"/>
+    <child link="head"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.523599" upper="0.523599"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from neck_yaw to neck_roll -->
+  <joint name="neck_roll" type="revolute">
+    <origin xyz="-9.70628e-19 0.025 0.03" rpy="-1.5708 -5.52203e-30 6.12323e-17"/>
+    <parent link="neck_yaw"/>
+    <child link="neck_roll"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.523599" upper="0.523599"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from shoulder_base to neck_yaw -->
+  <joint name="neck_yaw" type="revolute">
+    <origin xyz="-1.72556e-18 -0.21948 -0.025" rpy="1.5708 3.31821e-30 1.56492e-15"/>
+    <parent link="shoulder_base"/>
+    <child link="neck_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from waist_pitch to shoulder_base -->
+  <joint name="waist_roll" type="revolute">
+    <origin xyz="0.025 0.118004 -0.025" rpy="-3.14159 -1.5708 0"/>
+    <parent link="waist_pitch"/>
+    <child link="shoulder_base"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.523599" upper="0.523599"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from waist_yaw to waist_pitch -->
+  <joint name="waist_pitch" type="revolute">
+    <origin xyz="0.025 -6.91715e-18 0.040516" rpy="1.5708 -8.73285e-28 1.5708"/>
+    <parent link="waist_yaw"/>
+    <child link="waist_pitch"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.523599" upper="0.523599"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+  <!-- Joint from pelvis to waist_yaw -->
+  <joint name="waist_yaw" type="revolute">
+    <origin xyz="0 0 0.94" rpy="-1.32608e-27 -2.58745e-28 -1.5708"/>
+    <parent link="pelvis"/>
+    <child link="waist_yaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100" lower="-0.785398" upper="0.785398"/>
+    <joint_properties friction="0.1"/>
+  </joint>
+</robot>
