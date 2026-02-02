@@ -148,6 +148,12 @@
       <inertia ixx="0.000175919" ixy="-2.6963e-33" ixz="1.77266e-33" iyy="0.00137997" iyz="-6.83499e-35" izz="0.00126908"/>
     </inertial>
     <!-- Part right_foot_parts -->
+    <collision>
+      <origin xyz="0.052 -0.063 -0.025" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <box size="0.063 0.185 0.03"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0.0525 -0.063 -0.025" rpy="-1.5708 5.96834e-15 6.10051e-15"/>
       <geometry>
@@ -349,6 +355,12 @@
       <inertia ixx="0.000175919" ixy="1.92593e-34" ixz="-5.5713e-33" iyy="0.00137997" iyz="7.52126e-34" izz="0.00126908"/>
     </inertial>
     <!-- Part left_foot_parts -->
+    <collision>
+      <origin xyz="0.052 0.063 -0.025" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <box size="0.063 0.185 0.03"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0.0525 0.063 -0.025" rpy="1.5708 -8.20953e-14 6.03137e-15"/>
       <geometry>
@@ -1358,7 +1370,7 @@
     </inertial>
     <!-- Part right_palm_parts -->
     <collision>
-      <origin xyz="-1.028 1.81999e-16 -0.025" rpy="1.5708 -5.41428e-30 5.77779e-34"/>
+      <origin xyz="0.072 2.43555e-17 -0.025" rpy="1.5708 -5.41428e-30 5.77779e-34"/>
       <geometry>
         <box size="0.1 0.06 0.015"/>
       </geometry>
