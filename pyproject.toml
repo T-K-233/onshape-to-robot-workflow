@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "mujoco>=3.4.0",
     "onshape-to-robot>=1.7.9",
     "pymeshlab>=2025.7.post1",
 ]
