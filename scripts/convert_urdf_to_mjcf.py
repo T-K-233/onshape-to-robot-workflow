@@ -1,5 +1,5 @@
 """
-uv run ./scripts/convert_urdf_to_mjcf.py ./data/miku/urdf/miku.urdf ./data/miku/mjcf/miku.xml
+uv run ./scripts/convert_urdf_to_mjcf.py ./data/miku/urdf/miku.urdf ./data/miku/mjcf/miku.xml [--freejoint]
 """
 
 import argparse
@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 parser = argparse.ArgumentParser()
 parser.add_argument("input", type=str, help="Path to the URDF file.")
 parser.add_argument("output", type=str, help="Path to the XML file.")
+parser.add_argument("--freejoint", action="store_true", help="Add a free joint under the first body element.")
 args = parser.parse_args()
 
 urdf_path = Path(args.input)
@@ -215,6 +216,36 @@ def add_actuators_and_sensors(xml_file_path):
     # Write the updated XML
     tree.write(xml_file_path, encoding="utf-8", xml_declaration=True)
 
+
+def add_freejoint(xml_file_path):
+    """Add a free joint as the first child of the first body element."""
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    worldbody = root.find("worldbody")
+    if worldbody is None:
+        print("No worldbody found in XML")
+        return
+
+    first_body = worldbody.find("body")
+    if first_body is None:
+        print("No body element found in worldbody")
+        return
+
+    freejoint = ET.Element("joint")
+    freejoint.set("name", "floating_base_joint")
+    freejoint.set("type", "free")
+    freejoint.set("limited", "false")
+    freejoint.set("actuatorfrclimited", "false")
+    first_body.insert(0, freejoint)
+
+    tree.write(xml_file_path, encoding="utf-8", xml_declaration=True)
+    print("Added floating_base_joint to first body element")
+
+
+# Add freejoint if requested
+if args.freejoint:
+    add_freejoint(temp_xml_path)
 
 # Add actuators and sensors to the generated XML
 add_actuators_and_sensors(temp_xml_path)

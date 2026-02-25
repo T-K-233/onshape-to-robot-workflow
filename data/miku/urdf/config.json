@@ -1,10 +1,11 @@
 {
-    "document_id": "fb4d6ff78686302c8962a6e9",
+    "document_id": "e9ee61a2e2678af2088d9f31",
     "output_format": "urdf",
     "assembly_name": "Sim",
     "robot_name": "miku",
     "output_filename": "miku",
     "ignore": {},
+    "round_decimals": 12,
     "merge_stls": true,
     "simplify_stls": true,
     "max_stl_size": 2,
