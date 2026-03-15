@@ -38,7 +38,7 @@
     <inertial>
       <origin xyz="-0.08 0 -0" rpy="0 0 0" />
       <mass value="0.486947" />
-      <inertia ixx="0.000608684" ixy="-0" ixz="-0" iyy="0.000405789" iyz="0" izz="0.000405789" />
+      <inertia ixx="0.000608684" ixy="-0" ixz="-0" iyy="0.000405789" iyz="-0" izz="0.000405789" />
     </inertial>
     <!-- Part left_hip_pitch_parts -->
     <visual>
@@ -56,7 +56,7 @@
     <inertial>
       <origin xyz="0 0.21 -0" rpy="0 0 0" />
       <mass value="3.11646" />
-      <inertia ixx="0.0285416" ixy="0" ixz="-0" iyy="0.00389557" iyz="-0" izz="0.0285416" />
+      <inertia ixx="0.0285416" ixy="0" ixz="0" iyy="0.00389557" iyz="-0" izz="0.0285416" />
     </inertial>
     <!-- Part left_hip_roll_parts -->
     <collision>
@@ -80,7 +80,7 @@
     <inertial>
       <origin xyz="-0 -0 -0.42" rpy="0 0 0" />
       <mass value="0.486947" />
-      <inertia ixx="0.000405789" ixy="-0" ixz="-0" iyy="0.000608684" iyz="-0" izz="0.000405789" />
+      <inertia ixx="0.000405789" ixy="-0" ixz="0" iyy="0.000608684" iyz="-0" izz="0.000405789" />
     </inertial>
     <!-- Part left_hip_yaw_parts -->
     <visual>
@@ -98,7 +98,7 @@
     <inertial>
       <origin xyz="0 0.2 -0" rpy="0 0 0" />
       <mass value="2.92168" />
-      <inertia ixx="0.0237387" ixy="0" ixz="-0" iyy="0.0036521" iyz="0" izz="0.0237387" />
+      <inertia ixx="0.0237387" ixy="-0" ixz="-0" iyy="0.0036521" iyz="0" izz="0.0237387" />
     </inertial>
     <!-- Part left_knee_pitch_parts -->
     <collision>
@@ -122,7 +122,7 @@
     <inertial>
       <origin xyz="0 -0 0" rpy="0 0 0" />
       <mass value="0.121737" />
-      <inertia ixx="3.80427e-05" ixy="0" ixz="-0" iyy="4.43832e-05" iyz="-0" izz="4.43832e-05" />
+      <inertia ixx="3.80427e-05" ixy="-0" ixz="0" iyy="4.43832e-05" iyz="0" izz="4.43832e-05" />
     </inertial>
     <!-- Part left_ankle_yaw_parts -->
     <visual>
@@ -158,7 +158,7 @@
     <inertial>
       <origin xyz="0.0525 0.045 -0" rpy="0 0 0" />
       <mass value="0.433566" />
-      <inertia ixx="0.000175919" ixy="-0" ixz="0" iyy="0.00137997" iyz="0" izz="0.00126908" />
+      <inertia ixx="0.000175919" ixy="-0" ixz="-0" iyy="0.00137997" iyz="0" izz="0.00126908" />
     </inertial>
     <!-- Part left_foot_parts -->
     <collision>
@@ -168,7 +168,7 @@
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0.0525 0.045 -0" rpy="1.5708 0 0" />
+      <origin xyz="0.0525 0.045 -0" rpy="1.5708 0 -0" />
       <geometry>
         <mesh filename="../meshes/left_foot_visual.stl" />
       </geometry>
@@ -179,7 +179,7 @@
   </link>
   <!-- Joint from left_ankle_roll to left_foot -->
   <joint name="left_ankle_pitch" type="revolute">
-    <origin xyz="0 0 0" rpy="-0 -1.5708 0" />
+    <origin xyz="0 0 0" rpy="0 -1.5708 0" />
     <parent link="left_ankle_roll" />
     <child link="left_foot" />
     <axis xyz="0 0 1" />
@@ -206,7 +206,7 @@
   </joint>
   <!-- Joint from left_hip_yaw to left_knee_pitch -->
   <joint name="left_knee_pitch" type="revolute">
-    <origin xyz="-0 -0 -0.42" rpy="-1.5708 0 -0" />
+    <origin xyz="-0 0 -0.42" rpy="-1.5708 0 -0" />
     <parent link="left_hip_yaw" />
     <child link="left_knee_pitch" />
     <axis xyz="0 0 1" />
@@ -263,11 +263,11 @@
     <inertial>
       <origin xyz="-0 0.21 -0" rpy="0 0 0" />
       <mass value="3.11646" />
-      <inertia ixx="0.0285416" ixy="-0" ixz="0" iyy="0.00389557" iyz="-0" izz="0.0285416" />
+      <inertia ixx="0.0285416" ixy="-0" ixz="-0" iyy="0.00389557" iyz="0" izz="0.0285416" />
     </inertial>
     <!-- Part right_hip_roll_parts -->
     <collision>
-      <origin xyz="-0 0.21 -0" rpy="1.5708 -0 0" />
+      <origin xyz="-0 0.21 -0" rpy="1.5708 -0 -0" />
       <geometry>
         <cylinder length="0.2" radius="0.05" />
       </geometry>
@@ -287,11 +287,11 @@
     <inertial>
       <origin xyz="-0 0 -0.42" rpy="0 0 0" />
       <mass value="0.486947" />
-      <inertia ixx="0.000405789" ixy="0" ixz="-0" iyy="0.000608684" iyz="-0" izz="0.000405789" />
+      <inertia ixx="0.000405789" ixy="0" ixz="0" iyy="0.000608684" iyz="0" izz="0.000405789" />
     </inertial>
     <!-- Part right_hip_yaw_parts -->
     <visual>
-      <origin xyz="-0 0 -0.42" rpy="0 0 0" />
+      <origin xyz="-0 0 -0.42" rpy="-0 0 0" />
       <geometry>
         <mesh filename="../meshes/right_hip_yaw_visual.stl" />
       </geometry>
@@ -305,7 +305,7 @@
     <inertial>
       <origin xyz="0 0.2 0" rpy="0 0 0" />
       <mass value="2.92168" />
-      <inertia ixx="0.0237387" ixy="-0" ixz="-0" iyy="0.0036521" iyz="-0" izz="0.0237387" />
+      <inertia ixx="0.0237387" ixy="0" ixz="0" iyy="0.0036521" iyz="0" izz="0.0237387" />
     </inertial>
     <!-- Part right_knee_pitch_parts -->
     <collision>
@@ -329,11 +329,11 @@
     <inertial>
       <origin xyz="0 0 1e-12" rpy="0 0 0" />
       <mass value="0.121737" />
-      <inertia ixx="3.80427e-05" ixy="-0" ixz="0" iyy="4.43832e-05" iyz="-0" izz="4.43832e-05" />
+      <inertia ixx="3.80427e-05" ixy="0" ixz="0" iyy="4.43832e-05" iyz="0" izz="4.43832e-05" />
     </inertial>
     <!-- Part right_ankle_yaw_parts -->
     <visual>
-      <origin xyz="0 0 1e-12" rpy="0 0 0" />
+      <origin xyz="0 0 1e-12" rpy="-0 0 0" />
       <geometry>
         <mesh filename="../meshes/right_ankle_yaw_visual.stl" />
       </geometry>
@@ -347,7 +347,7 @@
     <inertial>
       <origin xyz="-0 -0 -0" rpy="0 0 0" />
       <mass value="0.121737" />
-      <inertia ixx="3.80427e-05" ixy="-0" ixz="0" iyy="4.43832e-05" iyz="-0" izz="4.43832e-05" />
+      <inertia ixx="3.80427e-05" ixy="-0" ixz="-0" iyy="4.43832e-05" iyz="0" izz="4.43832e-05" />
     </inertial>
     <!-- Part right_ankle_roll_parts -->
     <visual>
@@ -365,7 +365,7 @@
     <inertial>
       <origin xyz="0.0525 0.045 -0" rpy="0 0 0" />
       <mass value="0.433566" />
-      <inertia ixx="0.000175919" ixy="0" ixz="0" iyy="0.00137997" iyz="-0" izz="0.00126908" />
+      <inertia ixx="0.000175919" ixy="-0" ixz="-0" iyy="0.00137997" iyz="0" izz="0.00126908" />
     </inertial>
     <!-- Part right_foot_parts -->
     <collision>
@@ -375,7 +375,7 @@
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0.0525 0.045 -0" rpy="1.5708 -0 -0" />
+      <origin xyz="0.0525 0.045 -0" rpy="1.5708 0 -0" />
       <geometry>
         <mesh filename="../meshes/right_foot_visual.stl" />
       </geometry>
@@ -395,7 +395,7 @@
   </joint>
   <!-- Joint from right_ankle_yaw to right_ankle_roll -->
   <joint name="right_ankle_roll" type="revolute">
-    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708" />
+    <origin xyz="-0 0 0" rpy="-1.5708 0 -1.5708" />
     <parent link="right_ankle_yaw" />
     <child link="right_ankle_roll" />
     <axis xyz="0 0 1" />
@@ -404,7 +404,7 @@
   </joint>
   <!-- Joint from right_knee_pitch to right_ankle_yaw -->
   <joint name="right_ankle_yaw" type="revolute">
-    <origin xyz="0 0.4 0" rpy="1.5708 -0 -0" />
+    <origin xyz="-0 0.4 0" rpy="1.5708 -0 -0" />
     <parent link="right_knee_pitch" />
     <child link="right_ankle_yaw" />
     <axis xyz="0 0 1" />
@@ -413,7 +413,7 @@
   </joint>
   <!-- Joint from right_hip_yaw to right_knee_pitch -->
   <joint name="right_knee_pitch" type="revolute">
-    <origin xyz="0 0 -0.42" rpy="-1.5708 0 -0" />
+    <origin xyz="0 -0 -0.42" rpy="-1.5708 0 -0" />
     <parent link="right_hip_yaw" />
     <child link="right_knee_pitch" />
     <axis xyz="0 0 1" />
@@ -431,7 +431,7 @@
   </joint>
   <!-- Joint from right_hip_pitch to right_hip_roll -->
   <joint name="right_hip_roll" type="revolute">
-    <origin xyz="-0 0 -0" rpy="-1.5708 1.39626 -1.5708" />
+    <origin xyz="-0 0 0" rpy="-1.5708 1.39626 -1.5708" />
     <parent link="right_hip_pitch" />
     <child link="right_hip_roll" />
     <axis xyz="0 0 1" />
@@ -440,7 +440,7 @@
   </joint>
   <!-- Joint from pelvis to right_hip_pitch -->
   <joint name="right_hip_pitch" type="revolute">
-    <origin xyz="1.36e-09 -0.08 -1.6286e-08" rpy="-1.39626 -0 -0" />
+    <origin xyz="1.36e-09 -0.08 -1.6286e-08" rpy="-1.39626 -0 0" />
     <parent link="pelvis" />
     <child link="right_hip_pitch" />
     <axis xyz="0 0 1" />
@@ -452,11 +452,11 @@
     <inertial>
       <origin xyz="0 0 -0" rpy="0 0 0" />
       <mass value="0.311646" />
-      <inertia ixx="0.000189585" ixy="0" ixz="0" iyy="0.000249317" iyz="0" izz="0.000189585" />
+      <inertia ixx="0.000189585" ixy="-0" ixz="-0" iyy="0.000249317" iyz="0" izz="0.000189585" />
     </inertial>
     <!-- Part waist_yaw_parts -->
     <visual>
-      <origin xyz="0 0 -0" rpy="-0 -0 0" />
+      <origin xyz="0 0 -0" rpy="-0 -0 -0" />
       <geometry>
         <mesh filename="../meshes/waist_yaw_visual.stl" />
       </geometry>
@@ -470,11 +470,11 @@
     <inertial>
       <origin xyz="-0 0.09 -0" rpy="0 0 0" />
       <mass value="0.486947" />
-      <inertia ixx="0.000608684" ixy="0" ixz="0" iyy="0.000405789" iyz="0" izz="0.000405789" />
+      <inertia ixx="0.000608684" ixy="0" ixz="-0" iyy="0.000405789" iyz="-0" izz="0.000405789" />
     </inertial>
     <!-- Part waist_pitch_parts -->
     <visual>
-      <origin xyz="-0 0.09 -0" rpy="1.5708 -0 3.14159" />
+      <origin xyz="-0 0.09 -0" rpy="1.5708 -0 -3.14159" />
       <geometry>
         <mesh filename="../meshes/waist_pitch_visual.stl" />
       </geometry>
@@ -517,13 +517,13 @@
   <!-- Link left_shoulder_pitch -->
   <link name="left_shoulder_pitch">
     <inertial>
-      <origin xyz="-0 0 -0" rpy="0 0 0" />
+      <origin xyz="0 0 -0" rpy="0 0 0" />
       <mass value="0.311646" />
-      <inertia ixx="0.000249317" ixy="-0" ixz="-0" iyy="0.000189585" iyz="-0" izz="0.000189585" />
+      <inertia ixx="0.000249317" ixy="-0" ixz="0" iyy="0.000189585" iyz="-0" izz="0.000189585" />
     </inertial>
     <!-- Part left_shoulder_pitch_parts -->
     <visual>
-      <origin xyz="-0 0 -0" rpy="1.39626 0 0" />
+      <origin xyz="0 0 -0" rpy="1.39626 0 0" />
       <geometry>
         <mesh filename="../meshes/left_shoulder_pitch_visual.stl" />
       </geometry>
@@ -561,11 +561,11 @@
     <inertial>
       <origin xyz="0 -0 0.2" rpy="0 0 0" />
       <mass value="0.175301" />
-      <inertia ixx="7.59637e-05" ixy="0" ixz="0" iyy="7.88854e-05" iyz="-0" izz="7.59637e-05" />
+      <inertia ixx="7.59637e-05" ixy="-0" ixz="0" iyy="7.88854e-05" iyz="-0" izz="7.59637e-05" />
     </inertial>
     <!-- Part left_shoulder_yaw_parts -->
     <visual>
-      <origin xyz="0 -0 0.2" rpy="1.5708 0 0" />
+      <origin xyz="0 -0 0.2" rpy="1.5708 0 -0" />
       <geometry>
         <mesh filename="../meshes/left_shoulder_yaw_visual.stl" />
       </geometry>
@@ -589,7 +589,7 @@
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0.0925 -0" rpy="0 0 -0" />
+      <origin xyz="0 0.0925 -0" rpy="-0 0 0" />
       <geometry>
         <mesh filename="../meshes/left_elbow_pitch_visual.stl" />
       </geometry>
@@ -603,11 +603,11 @@
     <inertial>
       <origin xyz="0 0 -0" rpy="0 0 0" />
       <mass value="0.0779115" />
-      <inertia ixx="2.40227e-05" ixy="-0" ixz="0" iyy="1.55823e-05" iyz="0" izz="2.40227e-05" />
+      <inertia ixx="2.40227e-05" ixy="-0" ixz="-0" iyy="1.55823e-05" iyz="-0" izz="2.40227e-05" />
     </inertial>
     <!-- Part left_wrist_yaw_parts -->
     <visual>
-      <origin xyz="0 0 -0" rpy="1.5708 0 0" />
+      <origin xyz="0 0 -0" rpy="1.5708 -0 0" />
       <geometry>
         <mesh filename="../meshes/left_wrist_yaw_visual.stl" />
       </geometry>
@@ -619,13 +619,13 @@
   <!-- Link left_wrist_roll -->
   <link name="left_wrist_roll">
     <inertial>
-      <origin xyz="0 -0 -0" rpy="0 0 0" />
+      <origin xyz="0 -0 0" rpy="0 0 0" />
       <mass value="0.0779115" />
       <inertia ixx="1.55823e-05" ixy="0" ixz="-0" iyy="2.40227e-05" iyz="0" izz="2.40227e-05" />
     </inertial>
     <!-- Part left_wrist_roll_parts -->
     <visual>
-      <origin xyz="0 -0 -0" rpy="0 0 -0" />
+      <origin xyz="0 -0 0" rpy="-0 0 0" />
       <geometry>
         <mesh filename="../meshes/left_wrist_roll_visual.stl" />
       </geometry>
@@ -637,20 +637,20 @@
   <!-- Link left_hand -->
   <link name="left_hand">
     <inertial>
-      <origin xyz="-0 0.0479645 -0.0118716" rpy="0 0 0" />
+      <origin xyz="0 0.0479645 -0.0118716" rpy="0 0 0" />
       <mass value="0.028365" />
       <inertia ixx="7.37812e-06" ixy="-0" ixz="0" iyy="5.11736e-06" iyz="2.58217e-07"
         izz="3.32444e-06" />
     </inertial>
     <!-- Part left_hand_parts -->
     <collision>
-      <origin xyz="-0 0.08 0" rpy="1.5708 0 -1.5708" />
+      <origin xyz="0 0.08 0" rpy="1.5708 0 -1.5708" />
       <geometry>
         <box size="0.1 0.07 0.015" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-0 0.0479645 -0.0118716" rpy="0 -1.5708 0" />
+      <origin xyz="0 0.0479645 -0.0118716" rpy="0 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/left_hand_visual.stl" />
       </geometry>
@@ -686,7 +686,7 @@
     </inertial>
     <!-- Part left_finger_1_j2_parts -->
     <visual>
-      <origin xyz="0 0.01 0" rpy="-0 0 0.785398" />
+      <origin xyz="0 0.01 0" rpy="0 0 0.785398" />
       <geometry>
         <mesh filename="../meshes/left_finger_1_j2_visual.stl" />
       </geometry>
@@ -698,13 +698,13 @@
   <!-- Link left_finger_1_j3 -->
   <link name="left_finger_1_j3">
     <inertial>
-      <origin xyz="0 0.01 0" rpy="0 0 0" />
+      <origin xyz="-0 0.01 -0" rpy="0 0 0" />
       <mass value="0.001984" />
-      <inertia ixx="8.2667e-08" ixy="-0" ixz="0" iyy="2.7115e-08" iyz="-0" izz="7.6715e-08" />
+      <inertia ixx="8.2667e-08" ixy="0" ixz="0" iyy="2.7115e-08" iyz="-0" izz="7.6715e-08" />
     </inertial>
     <!-- Part left_finger_1_j3_parts -->
     <visual>
-      <origin xyz="0 0.01 0" rpy="-1.5708 -0.785398 1.5708" />
+      <origin xyz="-0 0.01 -0" rpy="-1.5708 -0.785398 1.5708" />
       <geometry>
         <mesh filename="../meshes/left_finger_1_j3_visual.stl" />
       </geometry>
@@ -733,7 +733,7 @@
   </link>
   <!-- Joint from left_finger_1_j3 to left_finger_1_j4 -->
   <joint name="left_finger1_j4" type="revolute">
-    <origin xyz="0 0.025 0" rpy="0 -0 -0" />
+    <origin xyz="-0 0.025 0" rpy="-0 0 -0" />
     <parent link="left_finger_1_j3" />
     <child link="left_finger_1_j4" />
     <axis xyz="0 0 1" />
@@ -742,7 +742,7 @@
   </joint>
   <!-- Joint from left_finger_1_j2 to left_finger_1_j3 -->
   <joint name="left_finger1_j3" type="revolute">
-    <origin xyz="-0 0.025 0" rpy="0 1.5708 0" />
+    <origin xyz="-0 0.025 0" rpy="-0 1.5708 0" />
     <parent link="left_finger_1_j2" />
     <child link="left_finger_1_j3" />
     <axis xyz="0 0 1" />
@@ -751,7 +751,7 @@
   </joint>
   <!-- Joint from left_finger_1_j1 to left_finger_1_j2 -->
   <joint name="left_finger1_j2" type="revolute">
-    <origin xyz="0 0.01 -0" rpy="0 -1.5708 0" />
+    <origin xyz="0 0.01 0" rpy="0 -1.5708 0" />
     <parent link="left_finger_1_j1" />
     <child link="left_finger_1_j2" />
     <axis xyz="0 0 1" />
@@ -760,7 +760,7 @@
   </joint>
   <!-- Joint from left_hand to left_finger_1_j1 -->
   <joint name="left_finger1_j1" type="revolute">
-    <origin xyz="-0 0.035 0.015" rpy="0.785398 0 0" />
+    <origin xyz="0 0.035 0.015" rpy="0.785398 0 -0" />
     <parent link="left_hand" />
     <child link="left_finger_1_j1" />
     <axis xyz="0 0 1" />
@@ -790,7 +790,7 @@
     <inertial>
       <origin xyz="0 0.0125 -0" rpy="0 0 0" />
       <mass value="0.00248" />
-      <inertia ixx="1.49833e-07" ixy="0" ixz="-0" iyy="3.3893e-08" iyz="-0" izz="1.42393e-07" />
+      <inertia ixx="1.49833e-07" ixy="-0" ixz="0" iyy="3.3893e-08" iyz="-0" izz="1.42393e-07" />
     </inertial>
     <!-- Part left_finger_2_j2_parts -->
     <visual>
@@ -841,7 +841,7 @@
   </link>
   <!-- Joint from left_finger_2_j3 to left_finger_2_j4 -->
   <joint name="left_finger2_j4" type="revolute">
-    <origin xyz="0 0.025 -0" rpy="0 0 -0" />
+    <origin xyz="0 0.025 0" rpy="0 0 0" />
     <parent link="left_finger_2_j3" />
     <child link="left_finger_2_j4" />
     <axis xyz="0 0 1" />
@@ -850,7 +850,7 @@
   </joint>
   <!-- Joint from left_finger_2_j2 to left_finger_2_j3 -->
   <joint name="left_finger2_j3" type="revolute">
-    <origin xyz="0 0.03 0" rpy="-0 1.5708 0" />
+    <origin xyz="0 0.03 -0" rpy="0 1.5708 0" />
     <parent link="left_finger_2_j2" />
     <child link="left_finger_2_j3" />
     <axis xyz="0 0 1" />
@@ -868,7 +868,7 @@
   </joint>
   <!-- Joint from left_hand to left_finger_2_j1 -->
   <joint name="left_finger2_j1" type="revolute">
-    <origin xyz="-0 0.07 0.015" rpy="0 0 -0" />
+    <origin xyz="0 0.07 0.015" rpy="-0 0 -0" />
     <parent link="left_hand" />
     <child link="left_finger_2_j1" />
     <axis xyz="0 0 1" />
@@ -878,13 +878,13 @@
   <!-- Link left_finger_3_j1 -->
   <link name="left_finger_3_j1">
     <inertial>
-      <origin xyz="0 0.0025 0" rpy="0 0 0" />
+      <origin xyz="-0 0.0025 0" rpy="0 0 0" />
       <mass value="0.000496" />
-      <inertia ixx="3.679e-09" ixy="-0" ixz="0" iyy="6.779e-09" iyz="0" izz="5.167e-09" />
+      <inertia ixx="3.679e-09" ixy="0" ixz="0" iyy="6.779e-09" iyz="0" izz="5.167e-09" />
     </inertial>
     <!-- Part left_finger_3_j1_parts -->
     <visual>
-      <origin xyz="0 0.0025 0" rpy="0 -1.5708 0" />
+      <origin xyz="-0 0.0025 0" rpy="0 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/left_finger_3_j1_visual.stl" />
       </geometry>
@@ -898,11 +898,11 @@
     <inertial>
       <origin xyz="-0 0.015 0" rpy="0 0 0" />
       <mass value="0.002976" />
-      <inertia ixx="2.48e-07" ixy="0" ixz="-0" iyy="4.0672e-08" iyz="0" izz="2.39072e-07" />
+      <inertia ixx="2.48e-07" ixy="0" ixz="0" iyy="4.0672e-08" iyz="0" izz="2.39072e-07" />
     </inertial>
     <!-- Part left_finger_3_j2_parts -->
     <visual>
-      <origin xyz="-0 0.015 0" rpy="-0 -0 -0" />
+      <origin xyz="-0 0.015 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/left_finger_3_j2_visual.stl" />
       </geometry>
@@ -938,7 +938,7 @@
     </inertial>
     <!-- Part left_finger_3_j4_parts -->
     <visual>
-      <origin xyz="-0.000432099 0.00438272 0" rpy="0 -1.5708 0" />
+      <origin xyz="-0.000432099 0.00438272 0" rpy="-0 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/left_finger_3_j4_visual.stl" />
       </geometry>
@@ -949,7 +949,7 @@
   </link>
   <!-- Joint from left_finger_3_j3 to left_finger_3_j4 -->
   <joint name="left_finger3_j4" type="revolute">
-    <origin xyz="0 0.03 -0" rpy="0 0 -0" />
+    <origin xyz="0 0.03 -0" rpy="-0 -0 0" />
     <parent link="left_finger_3_j3" />
     <child link="left_finger_3_j4" />
     <axis xyz="0 0 1" />
@@ -958,7 +958,7 @@
   </joint>
   <!-- Joint from left_finger_3_j2 to left_finger_3_j3 -->
   <joint name="left_finger3_j3" type="revolute">
-    <origin xyz="0 0.035 0" rpy="-0 1.5708 0" />
+    <origin xyz="-0 0.035 0" rpy="-0 1.5708 0" />
     <parent link="left_finger_3_j2" />
     <child link="left_finger_3_j3" />
     <axis xyz="0 0 1" />
@@ -967,7 +967,7 @@
   </joint>
   <!-- Joint from left_finger_3_j1 to left_finger_3_j2 -->
   <joint name="left_finger3_j2" type="revolute">
-    <origin xyz="0 0.01 0" rpy="0 -1.5708 0" />
+    <origin xyz="0 0.01 -0" rpy="-0 -1.5708 0" />
     <parent link="left_finger_3_j1" />
     <child link="left_finger_3_j2" />
     <axis xyz="0 0 1" />
@@ -976,7 +976,7 @@
   </joint>
   <!-- Joint from left_hand to left_finger_3_j1 -->
   <joint name="left_finger3_j1" type="revolute">
-    <origin xyz="0 0.07 0" rpy="-0 0 0" />
+    <origin xyz="-0 0.07 0" rpy="0 -0 -0" />
     <parent link="left_hand" />
     <child link="left_finger_3_j1" />
     <axis xyz="0 0 1" />
@@ -1006,11 +1006,11 @@
     <inertial>
       <origin xyz="-0 0.015 -0" rpy="0 0 0" />
       <mass value="0.002976" />
-      <inertia ixx="2.48e-07" ixy="0" ixz="0" iyy="4.0672e-08" iyz="0" izz="2.39072e-07" />
+      <inertia ixx="2.48e-07" ixy="0" ixz="-0" iyy="4.0672e-08" iyz="0" izz="2.39072e-07" />
     </inertial>
     <!-- Part left_finger_4_j2_parts -->
     <visual>
-      <origin xyz="-0 0.015 -0" rpy="0 0 -0" />
+      <origin xyz="-0 0.015 -0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/left_finger_4_j2_visual.stl" />
       </geometry>
@@ -1066,7 +1066,7 @@
   </joint>
   <!-- Joint from left_finger_4_j2 to left_finger_4_j3 -->
   <joint name="left_finger4_j3" type="revolute">
-    <origin xyz="0 0.035 0" rpy="0 1.5708 0" />
+    <origin xyz="0 0.035 -0" rpy="0 1.5708 0" />
     <parent link="left_finger_4_j2" />
     <child link="left_finger_4_j3" />
     <axis xyz="0 0 1" />
@@ -1075,7 +1075,7 @@
   </joint>
   <!-- Joint from left_finger_4_j1 to left_finger_4_j2 -->
   <joint name="left_finger4_j2" type="revolute">
-    <origin xyz="0 0.01 0" rpy="0 -1.5708 0" />
+    <origin xyz="-0 0.01 -0" rpy="0 -1.5708 0" />
     <parent link="left_finger_4_j1" />
     <child link="left_finger_4_j2" />
     <axis xyz="0 0 1" />
@@ -1084,7 +1084,7 @@
   </joint>
   <!-- Joint from left_hand to left_finger_4_j1 -->
   <joint name="left_finger4_j1" type="revolute">
-    <origin xyz="0 0.07 -0.015" rpy="-0 0 0" />
+    <origin xyz="0 0.07 -0.015" rpy="0 -0 -0" />
     <parent link="left_hand" />
     <child link="left_finger_4_j1" />
     <axis xyz="0 0 1" />
@@ -1096,7 +1096,7 @@
     <inertial>
       <origin xyz="-0 0.0025 0" rpy="0 0 0" />
       <mass value="0.000496" />
-      <inertia ixx="3.679e-09" ixy="0" ixz="0" iyy="6.779e-09" iyz="-0" izz="5.167e-09" />
+      <inertia ixx="3.679e-09" ixy="0" ixz="0" iyy="6.779e-09" iyz="0" izz="5.167e-09" />
     </inertial>
     <!-- Part left_finger_5_j1_parts -->
     <visual>
@@ -1114,7 +1114,7 @@
     <inertial>
       <origin xyz="0 0.01 0" rpy="0 0 0" />
       <mass value="0.001984" />
-      <inertia ixx="8.2667e-08" ixy="-0" ixz="0" iyy="2.7115e-08" iyz="0" izz="7.6715e-08" />
+      <inertia ixx="8.2667e-08" ixy="0" ixz="0" iyy="2.7115e-08" iyz="0" izz="7.6715e-08" />
     </inertial>
     <!-- Part left_finger_5_j2_parts -->
     <visual>
@@ -1130,13 +1130,13 @@
   <!-- Link left_finger_5_j3 -->
   <link name="left_finger_5_j3">
     <inertial>
-      <origin xyz="0 0.0075 -0" rpy="0 0 0" />
+      <origin xyz="0 0.0075 0" rpy="0 0 0" />
       <mass value="0.0008928" />
       <inertia ixx="1.9418e-08" ixy="0" ixz="-0" iyy="7.44e-09" iyz="-0" izz="2.1502e-08" />
     </inertial>
     <!-- Part left_finger_5_j3_parts -->
     <visual>
-      <origin xyz="0 0.0075 -0" rpy="0 -1.5708 0" />
+      <origin xyz="0 0.0075 0" rpy="0 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/left_finger_5_j3_visual.stl" />
       </geometry>
@@ -1165,7 +1165,7 @@
   </link>
   <!-- Joint from left_finger_5_j3 to left_finger_5_j4 -->
   <joint name="left_finger5_j4" type="revolute">
-    <origin xyz="0 0.02 0" rpy="-0 -0 0" />
+    <origin xyz="-0 0.02 0" rpy="-0 -0 0" />
     <parent link="left_finger_5_j3" />
     <child link="left_finger_5_j4" />
     <axis xyz="0 0 1" />
@@ -1174,7 +1174,7 @@
   </joint>
   <!-- Joint from left_finger_5_j2 to left_finger_5_j3 -->
   <joint name="left_finger5_j3" type="revolute">
-    <origin xyz="0 0.025 0" rpy="-0 1.5708 0" />
+    <origin xyz="0 0.025 0" rpy="0 1.5708 0" />
     <parent link="left_finger_5_j2" />
     <child link="left_finger_5_j3" />
     <axis xyz="0 0 1" />
@@ -1183,7 +1183,7 @@
   </joint>
   <!-- Joint from left_finger_5_j1 to left_finger_5_j2 -->
   <joint name="left_finger5_j2" type="revolute">
-    <origin xyz="0 0.01 0" rpy="-0 -1.5708 0" />
+    <origin xyz="-0 0.01 0" rpy="0 -1.5708 0" />
     <parent link="left_finger_5_j1" />
     <child link="left_finger_5_j2" />
     <axis xyz="0 0 1" />
@@ -1192,7 +1192,7 @@
   </joint>
   <!-- Joint from left_hand to left_finger_5_j1 -->
   <joint name="left_finger5_j1" type="revolute">
-    <origin xyz="0 0.07 -0.03" rpy="0 0 0" />
+    <origin xyz="-0 0.07 -0.03" rpy="0 0 -0" />
     <parent link="left_hand" />
     <child link="left_finger_5_j1" />
     <axis xyz="0 0 1" />
@@ -1201,7 +1201,7 @@
   </joint>
   <!-- Joint from left_wrist_roll to left_hand -->
   <joint name="left_wrist_pitch" type="revolute">
-    <origin xyz="0 0 0" rpy="0 1.5708 0" />
+    <origin xyz="0 -0 -0" rpy="0 1.5708 0" />
     <parent link="left_wrist_roll" />
     <child link="left_hand" />
     <axis xyz="0 0 1" />
@@ -1210,7 +1210,7 @@
   </joint>
   <!-- Joint from left_wrist_yaw to left_wrist_roll -->
   <joint name="left_wrist_roll" type="revolute">
-    <origin xyz="0 0 0" rpy="1.5708 0 -0" />
+    <origin xyz="-0 0 0" rpy="1.5708 0 -0" />
     <parent link="left_wrist_yaw" />
     <child link="left_wrist_roll" />
     <axis xyz="0 0 1" />
@@ -1219,7 +1219,7 @@
   </joint>
   <!-- Joint from left_elbow_pitch to left_wrist_yaw -->
   <joint name="left_wrist_yaw" type="revolute">
-    <origin xyz="0 0.18 -0" rpy="-1.5708 -0 0" />
+    <origin xyz="-0 0.18 0" rpy="-1.5708 -0 0" />
     <parent link="left_elbow_pitch" />
     <child link="left_wrist_yaw" />
     <axis xyz="0 0 1" />
@@ -1228,7 +1228,7 @@
   </joint>
   <!-- Joint from left_shoulder_yaw to left_elbow_pitch -->
   <joint name="left_elbow_pitch" type="revolute">
-    <origin xyz="0 -0 0.2" rpy="1.5708 -0 -0" />
+    <origin xyz="0 -0 0.2" rpy="1.5708 0 -0" />
     <parent link="left_shoulder_yaw" />
     <child link="left_elbow_pitch" />
     <axis xyz="0 0 1" />
@@ -1237,7 +1237,7 @@
   </joint>
   <!-- Joint from left_shoulder_roll to left_shoulder_yaw -->
   <joint name="left_shoulder_yaw" type="revolute">
-    <origin xyz="0 0 0" rpy="-1.5708 -1.5708 0" />
+    <origin xyz="0 0 -0" rpy="-1.5708 -1.5708 0" />
     <parent link="left_shoulder_roll" />
     <child link="left_shoulder_yaw" />
     <axis xyz="0 0 1" />
@@ -1246,11 +1246,11 @@
   </joint>
   <!-- Joint from left_shoulder_pitch to left_shoulder_roll -->
   <joint name="left_shoulder_roll" type="revolute">
-    <origin xyz="-0 0 0" rpy="1.5708 0.174533 1.5708" />
+    <origin xyz="0 0 0" rpy="1.5708 0.174533 1.5708" />
     <parent link="left_shoulder_pitch" />
     <child link="left_shoulder_roll" />
     <axis xyz="0 0 1" />
-    <limit effort="100" velocity="100" lower="-0.174533" upper="3.14159" />
+    <limit effort="100" velocity="100" lower="-1.74533" upper="1.5708" />
     <joint_properties friction="0.1" />
   </joint>
   <!-- Joint from torso to left_shoulder_pitch -->
@@ -1267,11 +1267,11 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.311646" />
-      <inertia ixx="0.000249317" ixy="0" ixz="0" iyy="0.000189585" iyz="0" izz="0.000189585" />
+      <inertia ixx="0.000249317" ixy="0" ixz="0" iyy="0.000189585" iyz="-0" izz="0.000189585" />
     </inertial>
     <!-- Part right_shoulder_pitch_parts -->
     <visual>
-      <origin xyz="0 0 0" rpy="1.74533 0 0" />
+      <origin xyz="0 0 0" rpy="1.74533 0 -0" />
       <geometry>
         <mesh filename="../meshes/right_shoulder_pitch_visual.stl" />
       </geometry>
@@ -1309,7 +1309,7 @@
     <inertial>
       <origin xyz="-0 -0 0.2" rpy="0 0 0" />
       <mass value="0.175301" />
-      <inertia ixx="7.59637e-05" ixy="-0" ixz="0" iyy="7.88854e-05" iyz="-0" izz="7.59637e-05" />
+      <inertia ixx="7.59637e-05" ixy="-0" ixz="-0" iyy="7.88854e-05" iyz="-0" izz="7.59637e-05" />
     </inertial>
     <!-- Part right_shoulder_yaw_parts -->
     <visual>
@@ -1327,7 +1327,7 @@
     <inertial>
       <origin xyz="-0 0.0925 0" rpy="0 0 0" />
       <mass value="0.304342" />
-      <inertia ixx="0.000443832" ixy="-0" ixz="0" iyy="9.51068e-05" iyz="0" izz="0.000443832" />
+      <inertia ixx="0.000443832" ixy="-0" ixz="-0" iyy="9.51068e-05" iyz="0" izz="0.000443832" />
     </inertial>
     <!-- Part right_elbow_pitch_parts -->
     <collision>
@@ -1337,7 +1337,7 @@
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-0 0.0925 0" rpy="-3.14159 0 -0" />
+      <origin xyz="-0 0.0925 0" rpy="3.14159 0 -0" />
       <geometry>
         <mesh filename="../meshes/right_elbow_pitch_visual.stl" />
       </geometry>
@@ -1351,11 +1351,11 @@
     <inertial>
       <origin xyz="-0 -0 -0" rpy="0 0 0" />
       <mass value="0.0779115" />
-      <inertia ixx="2.40227e-05" ixy="-0" ixz="-0" iyy="1.55823e-05" iyz="0" izz="2.40227e-05" />
+      <inertia ixx="2.40227e-05" ixy="-0" ixz="0" iyy="1.55823e-05" iyz="0" izz="2.40227e-05" />
     </inertial>
     <!-- Part right_wrist_yaw_parts -->
     <visual>
-      <origin xyz="-0 -0 -0" rpy="-1.5708 0 -0" />
+      <origin xyz="-0 -0 -0" rpy="-1.5708 0 0" />
       <geometry>
         <mesh filename="../meshes/right_wrist_yaw_visual.stl" />
       </geometry>
@@ -1369,7 +1369,7 @@
     <inertial>
       <origin xyz="0 0 -0" rpy="0 0 0" />
       <mass value="0.0779115" />
-      <inertia ixx="1.55823e-05" ixy="0" ixz="0" iyy="2.40227e-05" iyz="-0" izz="2.40227e-05" />
+      <inertia ixx="1.55823e-05" ixy="-0" ixz="-0" iyy="2.40227e-05" iyz="0" izz="2.40227e-05" />
     </inertial>
     <!-- Part right_wrist_roll_parts -->
     <visual>
@@ -1446,13 +1446,13 @@
   <!-- Link right_finger_1_j3 -->
   <link name="right_finger_1_j3">
     <inertial>
-      <origin xyz="-0 0.01 -0" rpy="0 0 0" />
+      <origin xyz="-0 0.01 0" rpy="0 0 0" />
       <mass value="0.001984" />
-      <inertia ixx="8.2667e-08" ixy="-0" ixz="-0" iyy="2.7115e-08" iyz="0" izz="7.6715e-08" />
+      <inertia ixx="8.2667e-08" ixy="-0" ixz="-0" iyy="2.7115e-08" iyz="-0" izz="7.6715e-08" />
     </inertial>
     <!-- Part right_finger_1_j3_parts -->
     <visual>
-      <origin xyz="-0 0.01 -0" rpy="1.5708 -0.785398 1.5708" />
+      <origin xyz="-0 0.01 0" rpy="1.5708 -0.785398 1.5708" />
       <geometry>
         <mesh filename="../meshes/right_finger_1_j3_visual.stl" />
       </geometry>
@@ -1481,7 +1481,7 @@
   </link>
   <!-- Joint from right_finger_1_j3 to right_finger_1_j4 -->
   <joint name="right_finger1_j4" type="revolute">
-    <origin xyz="0 0.025 0" rpy="-0 0 -0" />
+    <origin xyz="0 0.025 0" rpy="-0 -0 -0" />
     <parent link="right_finger_1_j3" />
     <child link="right_finger_1_j4" />
     <axis xyz="0 0 1" />
@@ -1490,7 +1490,7 @@
   </joint>
   <!-- Joint from right_finger_1_j2 to right_finger_1_j3 -->
   <joint name="right_finger1_j3" type="revolute">
-    <origin xyz="-0 0.025 0" rpy="0 -1.5708 0" />
+    <origin xyz="0 0.025 -0" rpy="-0 -1.5708 0" />
     <parent link="right_finger_1_j2" />
     <child link="right_finger_1_j3" />
     <axis xyz="0 0 1" />
@@ -1538,11 +1538,11 @@
     <inertial>
       <origin xyz="0 0.0125 -0" rpy="0 0 0" />
       <mass value="0.00248" />
-      <inertia ixx="1.49833e-07" ixy="-0" ixz="-0" iyy="3.3893e-08" iyz="-0" izz="1.42393e-07" />
+      <inertia ixx="1.49833e-07" ixy="-0" ixz="-0" iyy="3.3893e-08" iyz="0" izz="1.42393e-07" />
     </inertial>
     <!-- Part right_finger_2_j2_parts -->
     <visual>
-      <origin xyz="0 0.0125 -0" rpy="-0 0 3.14159" />
+      <origin xyz="0 0.0125 -0" rpy="-0 0 -3.14159" />
       <geometry>
         <mesh filename="../meshes/right_finger_2_j2_visual.stl" />
       </geometry>
@@ -1598,7 +1598,7 @@
   </joint>
   <!-- Joint from right_finger_2_j2 to right_finger_2_j3 -->
   <joint name="right_finger2_j3" type="revolute">
-    <origin xyz="0 0.03 -0" rpy="0 -1.5708 0" />
+    <origin xyz="0 0.03 0" rpy="0 -1.5708 0" />
     <parent link="right_finger_2_j2" />
     <child link="right_finger_2_j3" />
     <axis xyz="0 0 1" />
@@ -1607,7 +1607,7 @@
   </joint>
   <!-- Joint from right_finger_2_j1 to right_finger_2_j2 -->
   <joint name="right_finger2_j2" type="revolute">
-    <origin xyz="0 0.01 -0" rpy="-0 1.5708 0" />
+    <origin xyz="0 0.01 0" rpy="-0 1.5708 0" />
     <parent link="right_finger_2_j1" />
     <child link="right_finger_2_j2" />
     <axis xyz="0 0 1" />
@@ -1616,7 +1616,7 @@
   </joint>
   <!-- Joint from right_hand to right_finger_2_j1 -->
   <joint name="right_finger2_j1" type="revolute">
-    <origin xyz="-0 0.07 0.015" rpy="0 0 0" />
+    <origin xyz="0 0.07 0.015" rpy="0 0 -0" />
     <parent link="right_hand" />
     <child link="right_finger_2_j1" />
     <axis xyz="0 0 1" />
@@ -1626,13 +1626,13 @@
   <!-- Link right_finger_3_j1 -->
   <link name="right_finger_3_j1">
     <inertial>
-      <origin xyz="0 0.0025 -0" rpy="0 0 0" />
+      <origin xyz="0 0.0025 0" rpy="0 0 0" />
       <mass value="0.000496" />
       <inertia ixx="3.679e-09" ixy="-0" ixz="-0" iyy="6.779e-09" iyz="-0" izz="5.167e-09" />
     </inertial>
     <!-- Part right_finger_3_j1_parts -->
     <visual>
-      <origin xyz="0 0.0025 -0" rpy="3.14159 -1.5708 0" />
+      <origin xyz="0 0.0025 0" rpy="3.14159 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/right_finger_3_j1_visual.stl" />
       </geometry>
@@ -1646,11 +1646,11 @@
     <inertial>
       <origin xyz="0 0.015 -0" rpy="0 0 0" />
       <mass value="0.002976" />
-      <inertia ixx="2.48e-07" ixy="-0" ixz="-0" iyy="4.0672e-08" iyz="0" izz="2.39072e-07" />
+      <inertia ixx="2.48e-07" ixy="0" ixz="-0" iyy="4.0672e-08" iyz="-0" izz="2.39072e-07" />
     </inertial>
     <!-- Part right_finger_3_j2_parts -->
     <visual>
-      <origin xyz="0 0.015 -0" rpy="0 0 3.14159" />
+      <origin xyz="0 0.015 -0" rpy="-0 0 -3.14159" />
       <geometry>
         <mesh filename="../meshes/right_finger_3_j2_visual.stl" />
       </geometry>
@@ -1664,7 +1664,7 @@
     <inertial>
       <origin xyz="-0 0.0125 -0" rpy="0 0 0" />
       <mass value="0.001488" />
-      <inertia ixx="8.1964e-08" ixy="-0" ixz="0" iyy="1.24e-08" iyz="-0" izz="8.5436e-08" />
+      <inertia ixx="8.1964e-08" ixy="0" ixz="0" iyy="1.24e-08" iyz="0" izz="8.5436e-08" />
     </inertial>
     <!-- Part right_finger_3_j3_parts -->
     <visual>
@@ -1680,13 +1680,13 @@
   <!-- Link right_finger_3_j4 -->
   <link name="right_finger_3_j4">
     <inertial>
-      <origin xyz="0.000432099 0.00438272 -0" rpy="0 0 0" />
+      <origin xyz="0.000432099 0.00438272 0" rpy="0 0 0" />
       <mass value="0.0004185" />
       <inertia ixx="3.877e-09" ixy="-6.61e-10" ixz="-0" iyy="2.909e-09" iyz="-0" izz="5.043e-09" />
     </inertial>
     <!-- Part right_finger_3_j4_parts -->
     <visual>
-      <origin xyz="0.000432099 0.00438272 -0" rpy="-3.14159 -1.5708 0" />
+      <origin xyz="0.000432099 0.00438272 0" rpy="3.14159 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/right_finger_3_j4_visual.stl" />
       </geometry>
@@ -1697,7 +1697,7 @@
   </link>
   <!-- Joint from right_finger_3_j3 to right_finger_3_j4 -->
   <joint name="right_finger3_j4" type="revolute">
-    <origin xyz="0 0.03 0" rpy="-0 0 -0" />
+    <origin xyz="0 0.03 0" rpy="-0 -0 -0" />
     <parent link="right_finger_3_j3" />
     <child link="right_finger_3_j4" />
     <axis xyz="0 0 1" />
@@ -1706,7 +1706,7 @@
   </joint>
   <!-- Joint from right_finger_3_j2 to right_finger_3_j3 -->
   <joint name="right_finger3_j3" type="revolute">
-    <origin xyz="0 0.035 0" rpy="-0 -1.5708 0" />
+    <origin xyz="-0 0.035 0" rpy="0 -1.5708 0" />
     <parent link="right_finger_3_j2" />
     <child link="right_finger_3_j3" />
     <axis xyz="0 0 1" />
@@ -1715,7 +1715,7 @@
   </joint>
   <!-- Joint from right_finger_3_j1 to right_finger_3_j2 -->
   <joint name="right_finger3_j2" type="revolute">
-    <origin xyz="-0 0.01 0" rpy="0 1.5708 0" />
+    <origin xyz="0 0.01 0" rpy="0 1.5708 0" />
     <parent link="right_finger_3_j1" />
     <child link="right_finger_3_j2" />
     <axis xyz="0 0 1" />
@@ -1724,7 +1724,7 @@
   </joint>
   <!-- Joint from right_hand to right_finger_3_j1 -->
   <joint name="right_finger3_j1" type="revolute">
-    <origin xyz="0 0.07 -0" rpy="0 0 0" />
+    <origin xyz="-0 0.07 -0" rpy="0 0 0" />
     <parent link="right_hand" />
     <child link="right_finger_3_j1" />
     <axis xyz="0 0 1" />
@@ -1736,7 +1736,7 @@
     <inertial>
       <origin xyz="0 0.0025 0" rpy="0 0 0" />
       <mass value="0.000496" />
-      <inertia ixx="3.679e-09" ixy="0" ixz="0" iyy="6.779e-09" iyz="-0" izz="5.167e-09" />
+      <inertia ixx="3.679e-09" ixy="0" ixz="0" iyy="6.779e-09" iyz="0" izz="5.167e-09" />
     </inertial>
     <!-- Part right_finger_4_j1_parts -->
     <visual>
@@ -1754,11 +1754,11 @@
     <inertial>
       <origin xyz="0 0.015 -0" rpy="0 0 0" />
       <mass value="0.002976" />
-      <inertia ixx="2.48e-07" ixy="0" ixz="0" iyy="4.0672e-08" iyz="-0" izz="2.39072e-07" />
+      <inertia ixx="2.48e-07" ixy="-0" ixz="0" iyy="4.0672e-08" iyz="0" izz="2.39072e-07" />
     </inertial>
     <!-- Part right_finger_4_j2_parts -->
     <visual>
-      <origin xyz="0 0.015 -0" rpy="-0 0 3.14159" />
+      <origin xyz="0 0.015 -0" rpy="0 0 -3.14159" />
       <geometry>
         <mesh filename="../meshes/right_finger_4_j2_visual.stl" />
       </geometry>
@@ -1770,13 +1770,13 @@
   <!-- Link right_finger_4_j3 -->
   <link name="right_finger_4_j3">
     <inertial>
-      <origin xyz="0 0.01 -0" rpy="0 0 0" />
+      <origin xyz="-0 0.01 -0" rpy="0 0 0" />
       <mass value="0.0011904" />
       <inertia ixx="4.3251e-08" ixy="0" ixz="-0" iyy="9.92e-09" iyz="0" izz="4.6029e-08" />
     </inertial>
     <!-- Part right_finger_4_j3_parts -->
     <visual>
-      <origin xyz="0 0.01 -0" rpy="3.14159 -1.5708 0" />
+      <origin xyz="-0 0.01 -0" rpy="3.14159 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/right_finger_4_j3_visual.stl" />
       </geometry>
@@ -1794,7 +1794,7 @@
     </inertial>
     <!-- Part right_finger_4_j4_parts -->
     <visual>
-      <origin xyz="0.000432099 0.00438272 -0" rpy="3.14159 -1.5708 0" />
+      <origin xyz="0.000432099 0.00438272 -0" rpy="-3.14159 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/right_finger_4_j4_visual.stl" />
       </geometry>
@@ -1805,7 +1805,7 @@
   </link>
   <!-- Joint from right_finger_4_j3 to right_finger_4_j4 -->
   <joint name="right_finger4_j4" type="revolute">
-    <origin xyz="0 0.025 -0" rpy="0 0 -0" />
+    <origin xyz="0 0.025 0" rpy="-0 0 -0" />
     <parent link="right_finger_4_j3" />
     <child link="right_finger_4_j4" />
     <axis xyz="0 0 1" />
@@ -1814,7 +1814,7 @@
   </joint>
   <!-- Joint from right_finger_4_j2 to right_finger_4_j3 -->
   <joint name="right_finger4_j3" type="revolute">
-    <origin xyz="0 0.035 -0" rpy="0 -1.5708 0" />
+    <origin xyz="0 0.035 0" rpy="-0 -1.5708 0" />
     <parent link="right_finger_4_j2" />
     <child link="right_finger_4_j3" />
     <axis xyz="0 0 1" />
@@ -1823,7 +1823,7 @@
   </joint>
   <!-- Joint from right_finger_4_j1 to right_finger_4_j2 -->
   <joint name="right_finger4_j2" type="revolute">
-    <origin xyz="-0 0.01 0" rpy="-0 1.5708 0" />
+    <origin xyz="-0 0.01 0" rpy="0 1.5708 0" />
     <parent link="right_finger_4_j1" />
     <child link="right_finger_4_j2" />
     <axis xyz="0 0 1" />
@@ -1832,7 +1832,7 @@
   </joint>
   <!-- Joint from right_hand to right_finger_4_j1 -->
   <joint name="right_finger4_j1" type="revolute">
-    <origin xyz="0 0.07 -0.015" rpy="0 0 0" />
+    <origin xyz="0 0.07 -0.015" rpy="0 0 -0" />
     <parent link="right_hand" />
     <child link="right_finger_4_j1" />
     <axis xyz="0 0 1" />
@@ -1842,13 +1842,13 @@
   <!-- Link right_finger_5_j1 -->
   <link name="right_finger_5_j1">
     <inertial>
-      <origin xyz="-0 0.0025 0" rpy="0 0 0" />
+      <origin xyz="-0 0.0025 -0" rpy="0 0 0" />
       <mass value="0.000496" />
       <inertia ixx="3.679e-09" ixy="-0" ixz="0" iyy="6.779e-09" iyz="0" izz="5.167e-09" />
     </inertial>
     <!-- Part right_finger_5_j1_parts -->
     <visual>
-      <origin xyz="-0 0.0025 0" rpy="3.14159 -1.5708 0" />
+      <origin xyz="-0 0.0025 -0" rpy="3.14159 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/right_finger_5_j1_visual.stl" />
       </geometry>
@@ -1862,11 +1862,11 @@
     <inertial>
       <origin xyz="0 0.01 -0" rpy="0 0 0" />
       <mass value="0.001984" />
-      <inertia ixx="8.2667e-08" ixy="-0" ixz="-0" iyy="2.7115e-08" iyz="-0" izz="7.6715e-08" />
+      <inertia ixx="8.2667e-08" ixy="0" ixz="0" iyy="2.7115e-08" iyz="0" izz="7.6715e-08" />
     </inertial>
     <!-- Part right_finger_5_j2_parts -->
     <visual>
-      <origin xyz="0 0.01 -0" rpy="-0 0 3.14159" />
+      <origin xyz="0 0.01 -0" rpy="-0 0 -3.14159" />
       <geometry>
         <mesh filename="../meshes/right_finger_5_j2_visual.stl" />
       </geometry>
@@ -1913,7 +1913,7 @@
   </link>
   <!-- Joint from right_finger_5_j3 to right_finger_5_j4 -->
   <joint name="right_finger5_j4" type="revolute">
-    <origin xyz="0 0.02 0" rpy="-0 -0 0" />
+    <origin xyz="0 0.02 0" rpy="-0 -0 -0" />
     <parent link="right_finger_5_j3" />
     <child link="right_finger_5_j4" />
     <axis xyz="0 0 1" />
@@ -1931,7 +1931,7 @@
   </joint>
   <!-- Joint from right_finger_5_j1 to right_finger_5_j2 -->
   <joint name="right_finger5_j2" type="revolute">
-    <origin xyz="0 0.01 0" rpy="-0 1.5708 0" />
+    <origin xyz="0 0.01 0" rpy="0 1.5708 0" />
     <parent link="right_finger_5_j1" />
     <child link="right_finger_5_j2" />
     <axis xyz="0 0 1" />
@@ -1940,7 +1940,7 @@
   </joint>
   <!-- Joint from right_hand to right_finger_5_j1 -->
   <joint name="right_finger5_j1" type="revolute">
-    <origin xyz="0 0.07 -0.03" rpy="0 0 0" />
+    <origin xyz="0 0.07 -0.03" rpy="0 0 -0" />
     <parent link="right_hand" />
     <child link="right_finger_5_j1" />
     <axis xyz="0 0 1" />
@@ -1949,7 +1949,7 @@
   </joint>
   <!-- Joint from right_wrist_roll to right_hand -->
   <joint name="right_wrist_pitch" type="revolute">
-    <origin xyz="0 0 -0" rpy="0 1.5708 0" />
+    <origin xyz="0 0 0" rpy="0 1.5708 0" />
     <parent link="right_wrist_roll" />
     <child link="right_hand" />
     <axis xyz="0 0 1" />
@@ -1967,7 +1967,7 @@
   </joint>
   <!-- Joint from right_elbow_pitch to right_wrist_yaw -->
   <joint name="right_wrist_yaw" type="revolute">
-    <origin xyz="0 0.18 0" rpy="-1.5708 0 -0" />
+    <origin xyz="0 0.18 0" rpy="-1.5708 -0 0" />
     <parent link="right_elbow_pitch" />
     <child link="right_wrist_yaw" />
     <axis xyz="0 0 1" />
@@ -1976,7 +1976,7 @@
   </joint>
   <!-- Joint from right_shoulder_yaw to right_elbow_pitch -->
   <joint name="right_elbow_pitch" type="revolute">
-    <origin xyz="0 0 0.2" rpy="1.5708 0 -0" />
+    <origin xyz="0 0 0.2" rpy="1.5708 -0 -0" />
     <parent link="right_shoulder_yaw" />
     <child link="right_elbow_pitch" />
     <axis xyz="0 0 1" />
@@ -1994,11 +1994,11 @@
   </joint>
   <!-- Joint from right_shoulder_pitch to right_shoulder_roll -->
   <joint name="right_shoulder_roll" type="revolute">
-    <origin xyz="0 -0 0" rpy="1.5708 -0.174533 1.5708" />
+    <origin xyz="-0 0 0" rpy="1.5708 -0.174533 1.5708" />
     <parent link="right_shoulder_pitch" />
     <child link="right_shoulder_roll" />
     <axis xyz="0 0 1" />
-    <limit effort="100" velocity="100" lower="-0.174533" upper="3.14159" />
+    <limit effort="100" velocity="100" lower="-1.74533" upper="1.5708" />
     <joint_properties friction="0.1" />
   </joint>
   <!-- Joint from torso to right_shoulder_pitch -->
@@ -2015,11 +2015,11 @@
     <inertial>
       <origin xyz="-0 -0 0.04" rpy="0 0 0" />
       <mass value="0.0779115" />
-      <inertia ixx="1.55823e-05" ixy="0" ixz="-0" iyy="2.40227e-05" iyz="-0" izz="2.40227e-05" />
+      <inertia ixx="1.55823e-05" ixy="0" ixz="-0" iyy="2.40227e-05" iyz="0" izz="2.40227e-05" />
     </inertial>
     <!-- Part neck_yaw_parts -->
     <visual>
-      <origin xyz="-0 -0 0.04" rpy="0 -0 0" />
+      <origin xyz="-0 -0 0.04" rpy="-0 -0 0" />
       <geometry>
         <mesh filename="../meshes/neck_yaw_visual.stl" />
       </geometry>
@@ -2031,13 +2031,13 @@
   <!-- Link neck_roll -->
   <link name="neck_roll">
     <inertial>
-      <origin xyz="-0 0.04 -0" rpy="0 0 0" />
+      <origin xyz="0 0.04 -0" rpy="0 0 0" />
       <mass value="0.0779115" />
       <inertia ixx="1.55823e-05" ixy="-0" ixz="0" iyy="2.40227e-05" iyz="0" izz="2.40227e-05" />
     </inertial>
     <!-- Part neck_roll_parts -->
     <visual>
-      <origin xyz="-0 0.04 -0" rpy="-1.5708 -1.5708 0" />
+      <origin xyz="0 0.04 -0" rpy="-1.5708 -1.5708 0" />
       <geometry>
         <mesh filename="../meshes/neck_roll_visual.stl" />
       </geometry>
@@ -2061,7 +2061,7 @@
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-0.00171328 0.0447946 -0" rpy="1.5708 0 -3.14159" />
+      <origin xyz="-0.00171328 0.0447946 -0" rpy="1.5708 -0 3.14159" />
       <geometry>
         <mesh filename="../meshes/head_visual.stl" />
       </geometry>
@@ -2072,7 +2072,7 @@
   </link>
   <!-- Joint from neck_roll to head -->
   <joint name="neck_pitch" type="revolute">
-    <origin xyz="0 0.04 0" rpy="-0 1.5708 0" />
+    <origin xyz="0 0.04 0" rpy="0 1.5708 0" />
     <parent link="neck_roll" />
     <child link="head" />
     <axis xyz="0 0 1" />
@@ -2081,7 +2081,7 @@
   </joint>
   <!-- Joint from neck_yaw to neck_roll -->
   <joint name="neck_roll" type="revolute">
-    <origin xyz="-0 -0 0.04" rpy="1.5708 0 1.5708" />
+    <origin xyz="0 -0 0.04" rpy="1.5708 -0 1.5708" />
     <parent link="neck_yaw" />
     <child link="neck_roll" />
     <axis xyz="0 0 1" />
@@ -2099,7 +2099,7 @@
   </joint>
   <!-- Joint from waist_pitch to torso -->
   <joint name="waist_roll" type="revolute">
-    <origin xyz="0 0.09 -0" rpy="0 -1.5708 0" />
+    <origin xyz="0 0.09 0" rpy="-0 -1.5708 0" />
     <parent link="waist_pitch" />
     <child link="torso" />
     <axis xyz="0 0 1" />
@@ -2108,7 +2108,7 @@
   </joint>
   <!-- Joint from waist_yaw to waist_pitch -->
   <joint name="waist_pitch" type="revolute">
-    <origin xyz="0 0 0" rpy="1.5708 0 -3.14159" />
+    <origin xyz="-0 0 0" rpy="1.5708 0 3.14159" />
     <parent link="waist_yaw" />
     <child link="waist_pitch" />
     <axis xyz="0 0 1" />
@@ -2117,7 +2117,7 @@
   </joint>
   <!-- Joint from pelvis to waist_yaw -->
   <joint name="waist_yaw" type="revolute">
-    <origin xyz="-0 -0 0.12" rpy="0 0 -0" />
+    <origin xyz="-0 0 0.12" rpy="0 0 0" />
     <parent link="pelvis" />
     <child link="waist_yaw" />
     <axis xyz="0 0 1" />
