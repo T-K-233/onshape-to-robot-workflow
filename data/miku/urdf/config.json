@@ -4,6 +4,7 @@
     "assembly_name": "Sim",
     "robot_name": "miku",
     "output_filename": "miku",
+    "include_configuration_suffix": false,
     "ignore": {},
     "round_decimals": 12,
     "merge_stls": true,
