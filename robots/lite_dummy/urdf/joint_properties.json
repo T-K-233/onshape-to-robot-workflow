@@ -1,7 +1,7 @@
 {
     "(left|right)_shoulder_(roll|pitch|yaw)": {
         "friction_loss": 0.1,
-        "armature": 0.01,
+        "armature": 0.001,
         "effort_limit": 10
     },
     "(left|right)_elbow_pitch": {

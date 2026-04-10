@@ -2,7 +2,7 @@
     "document_id": "e9ee61a2e2678af2088d9f31",
     "output_format": "urdf",
     "assembly_name": "Bimanual",
-    "configuration": "Configuration=Piano",
+    "configuration": "Configuration=Dummy",
     "robot_name": "lite",
     "output_filename": "lite",
     "include_configuration_suffix": false,
