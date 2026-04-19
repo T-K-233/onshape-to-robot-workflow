@@ -15,9 +15,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("config", type=str, help="Path to the config file.")
     parser.add_argument(
-        "--keep-temp-files",
+        "--keep-assets",
         action="store_true",
-        help="Keep the temporary files.",
+        help="Keep the assets directory and the robot.pkl file.",
         default=False,
     )
     parser.add_argument("--convert", action="store_true", help="Convert from local robot.pkl")
@@ -47,10 +47,12 @@ def main(argv: list[str] | None = None) -> None:
             shutil.copy(file, assets_dir / file.name)
 
     # invoke onshape-to-robot to generate the urdf file
+    arguments = ["onshape-to-robot", str(urdf_dir)]
+    if args.keep_assets:
+        arguments.append("--save-pickle")
     if args.convert:
-        subprocess.run(["onshape-to-robot", str(urdf_dir), "--convert"], check=True)
-    else:
-        subprocess.run(["onshape-to-robot", str(urdf_dir)], check=True)
+        arguments.append("--convert")
+    subprocess.run(arguments, check=True)
 
     # copy everything under merged/ directory to the assets directory
     if (urdf_dir / "assets" / "merged").exists():
@@ -61,8 +63,10 @@ def main(argv: list[str] | None = None) -> None:
         )
 
     # delete the assets directory
-    if not args.keep_temp_files:
+    if not args.keep_assets:
         shutil.rmtree(urdf_dir / "assets", ignore_errors=True)
+        if args.convert:
+            (urdf_dir / "robot.pkl").unlink(missing_ok=True)
 
     # modify the urdf to use the mesh from the parent meshes directory
     urdf_path = urdf_dir / f"{robot_name}.urdf"
