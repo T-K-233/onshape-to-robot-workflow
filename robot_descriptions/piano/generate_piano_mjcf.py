@@ -14,7 +14,6 @@
 
 """Programatically build a piano MJCF model."""
 
-import math
 from pathlib import Path
 
 from dm_control import mjcf
@@ -26,12 +25,8 @@ except ImportError:
     import consts  # type: ignore[no-redef]
 
 
-def build(add_actuators: bool = False) -> types.MjcfRootElement:
-    """Programatically build a piano MJCF.
-
-    Args:
-        add_actuators: Whether to add actuators to the piano keys.
-    """
+def build() -> types.MjcfRootElement:
+    """Programatically build a piano MJCF."""
     root = mjcf.RootElement()
     root.model = "piano"
 
@@ -56,15 +51,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
     root.default.geom.contype = 0
     root.default.geom.conaffinity = 1
 
-    # Actuator defaults (torque control).
-    if add_actuators:
-        root.default.general.dyntype = "none"
-        root.default.general.dynprm = (consts.ACTUATOR_DYNPRM, 0, 0)
-        root.default.general.gaintype = "fixed"
-        root.default.general.gainprm = (consts.ACTUATOR_GAINPRM, 0, 0)
-        root.default.general.biastype = "none"
-        root.default.general.biasprm = (0, 0, 0)
-
     # White key defaults.
     white_default = root.default.add("default", dclass="white_key")
     white_default.geom.material = "white"
@@ -79,10 +65,8 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
     white_default.joint.damping = consts.KEY_DAMPING
     white_default.joint.armature = consts.KEY_ARMATURE
     white_default.joint.stiffness = consts.KEY_STIFFNESS
-    white_default.joint.springref = consts.KEY_SPRINGREF * math.pi / 180
+    white_default.joint.springref = consts.KEY_SPRINGREF
     white_default.joint.range = [0, consts.WHITE_KEY_JOINT_MAX_ANGLE]
-    if add_actuators:
-        white_default.general.ctrlrange = [0, consts.WHITE_KEY_JOINT_MAX_ANGLE]
 
     # Black key defaults.
     black_default = root.default.add("default", dclass="black_key")
@@ -98,16 +82,20 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
     black_default.joint.damping = consts.KEY_DAMPING
     black_default.joint.armature = consts.KEY_ARMATURE
     black_default.joint.stiffness = consts.KEY_STIFFNESS
-    black_default.joint.springref = consts.KEY_SPRINGREF * math.pi / 180
+    black_default.joint.springref = consts.KEY_SPRINGREF
     black_default.joint.range = [0, consts.BLACK_KEY_JOINT_MAX_ANGLE]
-    if add_actuators:
-        black_default.general.ctrlrange = [0, consts.BLACK_KEY_JOINT_MAX_ANGLE]
 
     # Add parent piano body.
     piano_body = root.worldbody.add("body", name="piano")
 
     # Add base inside piano body.
     base_body = piano_body.add("body", name="base")
+    base_body.add(
+        "inertial",
+        pos=consts.BASE_1_POS,
+        mass=10.0,
+        diaginertia=[0.1, 0.1, 0.1],
+    )
     base_body.add("geom", name="base_1", type="box", pos=consts.BASE_1_POS, size=consts.BASE_1_SIZE, rgba=consts.BASE_COLOR)
     base_body.add("geom", name="base_2", type="box", pos=consts.BASE_2_POS, size=consts.BASE_2_SIZE, rgba=consts.BASE_COLOR)
 
@@ -116,7 +104,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
     bodies = []
     joints = []
     sites = []
-    actuators = []
 
     for i in range(consts.NUM_WHITE_KEYS):
         y_coord = (
@@ -148,14 +135,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
                 "dclass": "white_key",
             }
         )
-        if add_actuators:
-            actuators.append(
-                {
-                    "joint": f"white_joint_{consts.WHITE_KEY_INDICES[i]}",
-                    "name": f"white_actuator_{consts.WHITE_KEY_INDICES[i]}",
-                    "dclass": "white_key",
-                }
-            )
 
     # Place the lone black key on the far left.
     y_coord = consts.WHITE_KEY_WIDTH + 0.5 * (
@@ -185,14 +164,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
             "dclass": "black_key",
         }
     )
-    if add_actuators:
-        actuators.append(
-            {
-                "joint": f"black_joint_{consts.BLACK_TRIPLET_KEY_INDICES[0]}",
-                "name": f"black_actuator_{consts.BLACK_TRIPLET_KEY_INDICES[0]}",
-                "dclass": "black_key",
-            }
-        )
 
     # Place the twin black keys.
     n = 0
@@ -232,14 +203,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
                     "dclass": "black_key",
                 }
             )
-            if add_actuators:
-                actuators.append(
-                    {
-                        "joint": f"black_joint_{consts.BLACK_TWIN_KEY_INDICES[n]}",
-                        "name": f"black_actuator_{consts.BLACK_TWIN_KEY_INDICES[n]}",
-                        "dclass": "black_key",
-                    }
-                )
             n += 1
 
     # Place the triplet black keys.
@@ -280,14 +243,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
                     "dclass": "black_key",
                 }
             )
-            if add_actuators:
-                actuators.append(
-                    {
-                        "joint": f"black_joint_{consts.BLACK_TRIPLET_KEY_INDICES[n]}",
-                        "name": f"black_actuator_{consts.BLACK_TRIPLET_KEY_INDICES[n]}",
-                        "dclass": "black_key",
-                    }
-                )
             n += 1
 
     # Sort the elements based on the key number.
@@ -297,8 +252,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
     geoms = [geoms[i] for i in indices]
     joints = [joints[i] for i in indices]
     sites = [sites[i] for i in indices]
-    if add_actuators:
-        actuators = [actuators[i] for i in indices]
 
     # Now create the corresponding MJCF elements and add them to the piano body.
     for i in range(len(bodies)):
@@ -306,8 +259,6 @@ def build(add_actuators: bool = False) -> types.MjcfRootElement:
         body.add("geom", **geoms[i])
         body.add("joint", **joints[i])
         body.add("site", **sites[i])
-        if add_actuators:
-            root.actuator.add("general", **actuators[i])
 
     return root
 

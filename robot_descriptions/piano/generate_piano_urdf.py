@@ -10,11 +10,58 @@ except ImportError:
     import consts  # type: ignore[no-redef]
 
 
-def build(add_actuators: bool = False) -> str:
-    """Programatically build a piano URDF.
+def _key_xml(
+    key_name: str,
+    joint_name: str,
+    color: str,
+    mass: float,
+    lx: float,
+    ly: float,
+    lz: float,
+    joint_origin: tuple,
+    visual_origin: tuple,
+    max_angle: float,
+) -> list:
+    ixx = mass * (ly ** 2 + lz ** 2) / 12
+    iyy = mass * (lx ** 2 + lz ** 2) / 12
+    izz = mass * (lx ** 2 + ly ** 2) / 12
+    vx, vy, vz = visual_origin
+    jx, jy, jz = joint_origin
+    return [
+        f'  <link name="{key_name}">',
+        '    <visual>',
+        f'      <origin xyz="{vx} {vy} {vz}" rpy="0 0 0" />',
+        '      <geometry>',
+        f'        <box size="{lx} {ly} {lz}" />',
+        '      </geometry>',
+        f'      <material name="{color}" />',
+        '    </visual>',
+        '    <collision>',
+        f'      <origin xyz="{vx} {vy} {vz}" rpy="0 0 0" />',
+        '      <geometry>',
+        f'        <box size="{lx} {ly} {lz}" />',
+        '      </geometry>',
+        '    </collision>',
+        '    <inertial>',
+        f'      <origin xyz="{vx} {vy} {vz}" rpy="0 0 0" />',
+        f'      <mass value="{mass}" />',
+        f'      <inertia ixx="{ixx}" ixy="0.0" ixz="0.0" iyy="{iyy}" iyz="0.0" izz="{izz}" />',
+        '    </inertial>',
+        '  </link>',
+        '',
+        f'  <joint name="{joint_name}" type="revolute">',
+        '    <parent link="base" />',
+        f'    <child link="{key_name}" />',
+        f'    <origin xyz="{jx} {jy} {jz}" rpy="0 0 0" />',
+        '    <axis xyz="0 1 0" />',
+        f'    <limit lower="0" upper="{max_angle}" effort="{consts.KEY_MAX_TORQUE}" velocity="6.67" />',
+        '  </joint>',
+        '',
+    ]
 
-    Args:
-        add_actuators: Whether to add actuators to the piano keys.
+
+def build() -> str:
+    """Programatically build a piano URDF.
 
     Returns:
         URDF XML string.
@@ -71,129 +118,28 @@ def build(add_actuators: bool = False) -> str:
         '    <child link="body" />',
         '    <origin xyz="0 0 0" rpy="0 0 0" />',
         '  </joint>',
-        ''
+        '',
     ]
 
-    # Generate white key links and joints
+    # Collect every key with its index so we can emit in sorted order (matches MJCF).
+    keys: list[tuple[int, str, float]] = []
+
+    # White keys.
     for i in range(consts.NUM_WHITE_KEYS):
         y_coord = (
             -consts.PIANO_KEY_TOTAL_WIDTH * 0.5
             + consts.WHITE_KEY_WIDTH * 0.5
             + i * (consts.WHITE_KEY_WIDTH + consts.SPACING_BETWEEN_WHITE_KEYS)
         )
+        keys.append((consts.WHITE_KEY_INDICES[i], "white", y_coord))
 
-        key_index = consts.WHITE_KEY_INDICES[i]
-        key_name = f"key_{key_index}"
-
-        # Calculate joint origin (at the back of the key)
-        joint_origin_x = consts.WHITE_KEY_X_OFFSET + consts.WHITE_KEY_LENGTH / 2 - consts.WHITE_KEY_TOTAL_LENGTH
-        joint_origin_y = y_coord
-        joint_origin_z = consts.WHITE_KEY_Z_OFFSET
-
-        # Calculate visual/collision origin (center of key)
-        visual_origin_x = consts.WHITE_KEY_TOTAL_LENGTH - consts.WHITE_KEY_LENGTH + consts.WHITE_KEY_LENGTH / 2
-        visual_origin_y = 0
-        visual_origin_z = 0
-
-        # Calculate inertia values for a box
-        mass = consts.WHITE_KEY_MASS
-        lx, ly, lz = consts.WHITE_KEY_LENGTH, consts.WHITE_KEY_WIDTH, consts.WHITE_KEY_HEIGHT
-        ixx = mass * (ly**2 + lz**2) / 12
-        iyy = mass * (lx**2 + lz**2) / 12
-        izz = mass * (lx**2 + ly**2) / 12
-
-        # Add link
-        urdf_lines.extend([
-            f'  <link name="{key_name}">',
-            '    <visual>',
-            f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-            '      <geometry>',
-            f'        <box size="{lx} {ly} {lz}" />',
-            '      </geometry>',
-            '      <material name="white" />',
-            '    </visual>',
-            '    <collision>',
-            f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-            '      <geometry>',
-            f'        <box size="{lx} {ly} {lz}" />',
-            '      </geometry>',
-            '    </collision>',
-            '    <inertial>',
-            f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-            f'      <mass value="{mass}" />',
-            f'      <inertia ixx="{ixx}" ixy="0.0" ixz="0.0" iyy="{iyy}" iyz="0.0" izz="{izz}" />',
-            '    </inertial>',
-            '  </link>',
-            '',
-            f'  <joint name="{key_name}_joint" type="revolute">',
-            '    <parent link="base" />',
-            f'    <child link="{key_name}" />',
-            f'    <origin xyz="{joint_origin_x} {joint_origin_y} {joint_origin_z}" rpy="0 0 0" />',
-            '    <axis xyz="0 1 0" />',
-            f'    <limit lower="0" upper="{consts.WHITE_KEY_JOINT_MAX_ANGLE}" effort="10.00" velocity="6.67" />',
-            '  </joint>',
-            ''
-        ])
-
-    # Place the lone black key on the far left.
+    # Lone black key on the far left.
     y_coord = consts.WHITE_KEY_WIDTH + 0.5 * (
         -consts.PIANO_KEY_TOTAL_WIDTH + consts.SPACING_BETWEEN_WHITE_KEYS
     )
+    keys.append((consts.BLACK_TRIPLET_KEY_INDICES[0], "black", y_coord))
 
-    key_index = consts.BLACK_TRIPLET_KEY_INDICES[0]
-    key_name = f"key_{key_index}"
-
-    # Calculate joint origin (at the back of the key)
-    joint_origin_x = consts.BLACK_KEY_X_OFFSET + consts.BLACK_KEY_LENGTH / 2 - consts.BLACK_KEY_TOTAL_LENGTH
-    joint_origin_y = y_coord
-    joint_origin_z = consts.BLACK_KEY_Z_OFFSET
-
-    # Calculate visual/collision origin (center of key)
-    visual_origin_x = consts.BLACK_KEY_TOTAL_LENGTH - consts.BLACK_KEY_LENGTH + consts.BLACK_KEY_LENGTH / 2
-    visual_origin_y = 0
-    visual_origin_z = 0
-
-    # Calculate inertia values for a box
-    mass = consts.BLACK_KEY_MASS
-    lx, ly, lz = consts.BLACK_KEY_LENGTH, consts.BLACK_KEY_WIDTH, consts.BLACK_KEY_HEIGHT
-    ixx = mass * (ly**2 + lz**2) / 12
-    iyy = mass * (lx**2 + lz**2) / 12
-    izz = mass * (lx**2 + ly**2) / 12
-
-    # Add link
-    urdf_lines.extend([
-        f'  <link name="{key_name}">',
-        '    <visual>',
-        f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-        '      <geometry>',
-        f'        <box size="{lx} {ly} {lz}" />',
-        '      </geometry>',
-        '      <material name="black" />',
-        '    </visual>',
-        '    <collision>',
-        f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-        '      <geometry>',
-        f'        <box size="{lx} {ly} {lz}" />',
-        '      </geometry>',
-        '    </collision>',
-        '    <inertial>',
-        f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-        f'      <mass value="{mass}" />',
-        f'      <inertia ixx="{ixx}" ixy="0.0" ixz="0.0" iyy="{iyy}" iyz="0.0" izz="{izz}" />',
-        '    </inertial>',
-        '  </link>',
-        '',
-        f'  <joint name="{key_name}_joint" type="revolute">',
-        '    <parent link="base" />',
-        f'    <child link="{key_name}" />',
-        f'    <origin xyz="{joint_origin_x} {joint_origin_y} {joint_origin_z}" rpy="0 0 0" />',
-        '    <axis xyz="0 1 0" />',
-        f'    <limit lower="0" upper="{consts.BLACK_KEY_JOINT_MAX_ANGLE}" effort="10.00" velocity="6.67" />',
-        '  </joint>',
-        ''
-    ])
-
-    # Place the twin black keys.
+    # Twin black keys.
     n = 0
     for twin_index in consts.TWIN_GROUP_INDICES:
         for j in range(2):
@@ -203,62 +149,10 @@ def build(add_actuators: bool = False) -> str:
                 + twin_index
                 * (consts.WHITE_KEY_WIDTH + consts.SPACING_BETWEEN_WHITE_KEYS)
             )
-
-            key_index = consts.BLACK_TWIN_KEY_INDICES[n]
-            key_name = f"key_{key_index}"
-
-            # Calculate joint origin (at the back of the key)
-            joint_origin_x = consts.BLACK_KEY_X_OFFSET + consts.BLACK_KEY_LENGTH / 2 - consts.BLACK_KEY_TOTAL_LENGTH
-            joint_origin_y = y_coord
-            joint_origin_z = consts.BLACK_KEY_Z_OFFSET
-
-            # Calculate visual/collision origin (center of key)
-            visual_origin_x = consts.BLACK_KEY_TOTAL_LENGTH - consts.BLACK_KEY_LENGTH + consts.BLACK_KEY_LENGTH / 2
-            visual_origin_y = 0
-            visual_origin_z = 0
-
-            # Calculate inertia values for a box
-            mass = consts.BLACK_KEY_MASS
-            lx, ly, lz = consts.BLACK_KEY_LENGTH, consts.BLACK_KEY_WIDTH, consts.BLACK_KEY_HEIGHT
-            ixx = mass * (ly**2 + lz**2) / 12
-            iyy = mass * (lx**2 + lz**2) / 12
-            izz = mass * (lx**2 + ly**2) / 12
-
-            # Add link
-            urdf_lines.extend([
-                f'  <link name="{key_name}">',
-                '    <visual>',
-                f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-                '      <geometry>',
-                f'        <box size="{lx} {ly} {lz}" />',
-                '      </geometry>',
-                '      <material name="black" />',
-                '    </visual>',
-                '    <collision>',
-                f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-                '      <geometry>',
-                f'        <box size="{lx} {ly} {lz}" />',
-                '      </geometry>',
-                '    </collision>',
-                '    <inertial>',
-                f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-                f'      <mass value="{mass}" />',
-                f'      <inertia ixx="{ixx}" ixy="0.0" ixz="0.0" iyy="{iyy}" iyz="0.0" izz="{izz}" />',
-                '    </inertial>',
-                '  </link>',
-                '',
-                f'  <joint name="{key_name}_joint" type="revolute">',
-                '    <parent link="base" />',
-                f'    <child link="{key_name}" />',
-                f'    <origin xyz="{joint_origin_x} {joint_origin_y} {joint_origin_z}" rpy="0 0 0" />',
-                '    <axis xyz="0 1 0" />',
-                f'    <limit lower="0" upper="{consts.BLACK_KEY_JOINT_MAX_ANGLE}" effort="10.00" velocity="6.67" />',
-                '  </joint>',
-                ''
-            ])
+            keys.append((consts.BLACK_TWIN_KEY_INDICES[n], "black", y_coord))
             n += 1
 
-    # Place the triplet black keys.
+    # Triplet black keys.
     n = 1  # Skip the lone black key.
     for triplet_index in consts.TRIPLET_GROUP_INDICES:
         for j in range(3):
@@ -268,60 +162,72 @@ def build(add_actuators: bool = False) -> str:
                 + triplet_index
                 * (consts.WHITE_KEY_WIDTH + consts.SPACING_BETWEEN_WHITE_KEYS)
             )
-
-            key_index = consts.BLACK_TRIPLET_KEY_INDICES[n]
-            key_name = f"key_{key_index}"
-
-            # Calculate joint origin (at the back of the key)
-            joint_origin_x = consts.BLACK_KEY_X_OFFSET + consts.BLACK_KEY_LENGTH / 2 - consts.BLACK_KEY_TOTAL_LENGTH
-            joint_origin_y = y_coord
-            joint_origin_z = consts.BLACK_KEY_Z_OFFSET
-
-            # Calculate visual/collision origin (center of key)
-            visual_origin_x = consts.BLACK_KEY_TOTAL_LENGTH - consts.BLACK_KEY_LENGTH + consts.BLACK_KEY_LENGTH / 2
-            visual_origin_y = 0
-            visual_origin_z = 0
-
-            # Calculate inertia values for a box
-            mass = consts.BLACK_KEY_MASS
-            lx, ly, lz = consts.BLACK_KEY_LENGTH, consts.BLACK_KEY_WIDTH, consts.BLACK_KEY_HEIGHT
-            ixx = mass * (ly**2 + lz**2) / 12
-            iyy = mass * (lx**2 + lz**2) / 12
-            izz = mass * (lx**2 + ly**2) / 12
-
-            # Add link
-            urdf_lines.extend([
-                f'  <link name="{key_name}">',
-                '    <visual>',
-                f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-                '      <geometry>',
-                f'        <box size="{lx} {ly} {lz}" />',
-                '      </geometry>',
-                '      <material name="black" />',
-                '    </visual>',
-                '    <collision>',
-                f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-                '      <geometry>',
-                f'        <box size="{lx} {ly} {lz}" />',
-                '      </geometry>',
-                '    </collision>',
-                '    <inertial>',
-                f'      <origin xyz="{visual_origin_x} {visual_origin_y} {visual_origin_z}" rpy="0 0 0" />',
-                f'      <mass value="{mass}" />',
-                f'      <inertia ixx="{ixx}" ixy="0.0" ixz="0.0" iyy="{iyy}" iyz="0.0" izz="{izz}" />',
-                '    </inertial>',
-                '  </link>',
-                '',
-                f'  <joint name="{key_name}_joint" type="revolute">',
-                '    <parent link="base" />',
-                f'    <child link="{key_name}" />',
-                f'    <origin xyz="{joint_origin_x} {joint_origin_y} {joint_origin_z}" rpy="0 0 0" />',
-                '    <axis xyz="0 1 0" />',
-                f'    <limit lower="0" upper="{consts.BLACK_KEY_JOINT_MAX_ANGLE}" effort="10.00" velocity="6.67" />',
-                '  </joint>',
-                ''
-            ])
+            keys.append((consts.BLACK_TRIPLET_KEY_INDICES[n], "black", y_coord))
             n += 1
+
+    keys.sort(key=lambda k: k[0])
+
+    for index, color, y_coord in keys:
+        key_name = f"{color}_key_{index}"
+        joint_name = f"{color}_joint_{index}"
+        if color == "white":
+            joint_origin = (
+                consts.WHITE_KEY_X_OFFSET
+                + consts.WHITE_KEY_LENGTH / 2
+                - consts.WHITE_KEY_TOTAL_LENGTH,
+                y_coord,
+                consts.WHITE_KEY_Z_OFFSET,
+            )
+            visual_origin = (
+                consts.WHITE_KEY_TOTAL_LENGTH
+                - consts.WHITE_KEY_LENGTH
+                + consts.WHITE_KEY_LENGTH / 2,
+                0,
+                0,
+            )
+            mass = consts.WHITE_KEY_MASS
+            lx, ly, lz = (
+                consts.WHITE_KEY_LENGTH,
+                consts.WHITE_KEY_WIDTH,
+                consts.WHITE_KEY_HEIGHT,
+            )
+            max_angle = consts.WHITE_KEY_JOINT_MAX_ANGLE
+        else:
+            joint_origin = (
+                consts.BLACK_KEY_X_OFFSET
+                + consts.BLACK_KEY_LENGTH / 2
+                - consts.BLACK_KEY_TOTAL_LENGTH,
+                y_coord,
+                consts.BLACK_KEY_Z_OFFSET,
+            )
+            visual_origin = (
+                consts.BLACK_KEY_TOTAL_LENGTH
+                - consts.BLACK_KEY_LENGTH
+                + consts.BLACK_KEY_LENGTH / 2,
+                0,
+                0,
+            )
+            mass = consts.BLACK_KEY_MASS
+            lx, ly, lz = (
+                consts.BLACK_KEY_LENGTH,
+                consts.BLACK_KEY_WIDTH,
+                consts.BLACK_KEY_HEIGHT,
+            )
+            max_angle = consts.BLACK_KEY_JOINT_MAX_ANGLE
+        urdf_lines.extend(
+            _key_xml(
+                key_name=key_name,
+                joint_name=joint_name,
+                color=color,
+                mass=mass,
+                lx=lx,
+                ly=ly,
+                lz=lz,
+                joint_origin=joint_origin,
+                visual_origin=visual_origin,
+                max_angle=max_angle,
+            )
+        )
 
     # Close the robot tag
     urdf_lines.append('</robot>')
