@@ -1,5 +1,8 @@
 """
-uv run robot-descriptions-convert-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf ./robots/<robot>/mjcf/<robot_name>.xml [--freejoint]
+uv run robot-descriptions-convert-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf [--freejoint]
+
+The output MJCF path is derived from the input by swapping the `urdf` directory
+for `mjcf` and the `.urdf` extension for `.xml`.
 """
 
 import argparse
@@ -23,7 +26,6 @@ MUJOCO_COMPILER_OPTIONS = {
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Convert a URDF file to MJCF.")
     parser.add_argument("input", type=str, help="Path to the URDF file.")
-    parser.add_argument("output", type=str, help="Path to the MJCF XML file.")
     parser.add_argument(
         "--freejoint",
         action="store_true",
@@ -309,13 +311,27 @@ def write_output_xml(
     output_xml_path.write_text(content)
 
 
+def derive_mjcf_path(urdf_path: Path) -> Path:
+    parts = list(urdf_path.parts)
+    try:
+        urdf_index = len(parts) - 1 - parts[::-1].index("urdf")
+    except ValueError:
+        raise ValueError(
+            f"Expected the URDF file to live under a `urdf` directory, got {urdf_path}.",
+        )
+
+    parts[urdf_index] = "mjcf"
+    return Path(*parts).with_suffix(".xml")
+
+
 def main(argv: list[str] | None = None) -> None:
     args = parse_args(argv)
     urdf_path = Path(args.input)
-    xml_path = Path(args.output)
 
     if not urdf_path.exists():
         raise FileNotFoundError(f"URDF file {urdf_path} does not exist!")
+
+    xml_path = derive_mjcf_path(urdf_path)
 
     joint_properties = load_joint_properties(urdf_path)
     mesh_folders = extract_mesh_folders(urdf_path)

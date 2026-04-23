@@ -90,12 +90,16 @@ urdf_path = load_asset(
 
     Joint actuator and MJCF joint tuning are loaded from `robots/<robot>/urdf/joint_properties.json`.
 
+    The output path is derived from the input by swapping `urdf` → `mjcf` and `.urdf` → `.xml`, so only the input path is needed:
+
     ```bash
-    uv run robot-descriptions-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf ./robots/<robot>/mjcf/<robot_name>.xml
+    uv run robot-descriptions-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf
     ```
+
+    The result will be generated at `./robots/<robot>/mjcf/<robot_name>.xml`.
 
     For floating base robots:
 
     ```bash
-    uv run robot-descriptions-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf ./robots/<robot>/mjcf/<robot_name>.xml --freejoint
+    uv run robot-descriptions-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf --freejoint
     ```
