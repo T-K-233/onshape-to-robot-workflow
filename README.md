@@ -89,6 +89,7 @@ urdf_path = load_asset(
 5. URDF -> MJCF
 
     Joint actuator and MJCF joint tuning are loaded from `robots/<robot>/urdf/joint_properties.json`.
+    Generated cylinder geoms are rewritten as capsules in the final MJCF.
 
     The output path is derived from the input by swapping `urdf` → `mjcf` and `.urdf` → `.xml`, so only the input path is needed:
 

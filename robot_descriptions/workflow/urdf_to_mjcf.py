@@ -1,5 +1,5 @@
 """
-uv run robot-descriptions-convert-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf [--freejoint]
+uv run robot-descriptions-urdf-to-mjcf ./robots/<robot>/urdf/<robot_name>.urdf [--freejoint]
 
 The output MJCF path is derived from the input by swapping the `urdf` directory
 for `mjcf` and the `.urdf` extension for `.xml`.
@@ -10,9 +10,9 @@ import json
 from pathlib import Path
 import re
 import shutil
-import subprocess
-import sys
 import xml.etree.ElementTree as ET
+
+import mujoco
 
 
 MUJOCO_COMPILER_OPTIONS = {
@@ -117,22 +117,12 @@ def copy_meshes_to_temp(
     return changed_mesh_paths
 
 
-def launch_mujoco_viewer(temp_urdf_dir: Path, urdf_filename: str) -> Path:
-    print("Launching mujoco viewer...")
-    print("Please click the 'Save XML' button in the viewer to save the MJCF file and then close the viewer.")
+def save_mjcf_from_urdf(temp_urdf_path: Path) -> Path:
+    print("Compiling URDF with MuJoCo...")
+    model = mujoco.MjModel.from_xml_path(str(temp_urdf_path))
 
-    subprocess.run(
-        [sys.executable, "-m", "mujoco.viewer", "--mjcf", urdf_filename],
-        cwd=temp_urdf_dir,
-        check=True,
-    )
-
-    temp_xml_path = temp_urdf_dir / "mjmodel.xml"
-    if not temp_xml_path.exists():
-        raise FileNotFoundError(
-            f"Expected MuJoCo to save MJCF to {temp_xml_path}, but the file was not created.",
-        )
-
+    temp_xml_path = temp_urdf_path.with_name("mjmodel.xml")
+    mujoco.mj_saveLastXML(str(temp_xml_path), model)
     return temp_xml_path
 
 
@@ -297,6 +287,24 @@ def apply_joint_properties(xml_file_path: Path, joint_properties: dict) -> None:
     tree.write(xml_file_path, encoding="utf-8", xml_declaration=True)
 
 
+def replace_cylinders_with_capsules(xml_file_path: Path) -> int:
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    count = 0
+    for geom in root.iter("geom"):
+        if geom.get("type") != "cylinder":
+            continue
+
+        geom.set("type", "capsule")
+        count += 1
+
+    if count:
+        tree.write(xml_file_path, encoding="utf-8", xml_declaration=True)
+
+    return count
+
+
 def write_output_xml(
     temp_xml_path: Path,
     output_xml_path: Path,
@@ -349,10 +357,14 @@ def main(argv: list[str] | None = None) -> None:
             temp_urdf_path=temp_urdf_path,
         )
 
-        temp_xml_path = launch_mujoco_viewer(temp_urdf_dir, urdf_path.name)
+        temp_xml_path = save_mjcf_from_urdf(temp_urdf_path)
 
         if args.freejoint:
             add_freejoint(temp_xml_path)
+
+        replaced_cylinders = replace_cylinders_with_capsules(temp_xml_path)
+        if replaced_cylinders:
+            print(f"Replaced {replaced_cylinders} cylinder geom(s) with capsules")
 
         add_actuators_and_sensors(temp_xml_path, joint_properties)
         apply_joint_properties(temp_xml_path, joint_properties)

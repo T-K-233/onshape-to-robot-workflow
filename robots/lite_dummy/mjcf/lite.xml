@@ -63,7 +63,7 @@
               diaginertia="0.00050483 0.000501106 0.000213278" />
             <joint name="left_shoulder_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
               actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.001" />
-            <geom size="0.03 0.04" pos="0 0 0.03" quat="0.707105 0 0 -0.707108" type="cylinder" />
+            <geom size="0.03 0.04" pos="0 0 0.03" quat="0.707105 0 0 -0.707108" type="capsule" />
             <geom pos="0.00515648 -2.4401e-08 -0.0554418" quat="0.707105 -0.707108 0 0" type="mesh"
               contype="0" conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
               mesh="left_shoulder_yaw_visual" />
@@ -82,7 +82,7 @@
                   diaginertia="0.000826137 0.000817621 0.000268082" />
                 <joint name="left_wrist_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
                   actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.01" />
-                <geom size="0.03 0.04" pos="0 0 -0.035" quat="1.32679e-06 0 0 -1" type="cylinder" />
+                <geom size="0.03 0.04" pos="0 0 -0.035" quat="1.32679e-06 0 0 -1" type="capsule" />
                 <geom pos="-2.258e-07 0.000140958 -0.0577988" quat="0.707105 -0.707108 0 0"
                   type="mesh" contype="0" conaffinity="0" group="1" density="0"
                   rgba="0.933333 0.933333 0.933333 1" mesh="left_wrist_yaw_visual" />
@@ -103,7 +103,7 @@
                       range="-0.785398 0.785398" actuatorfrcrange="-100 100" frictionloss="0.1"
                       armature="0.01" />
                     <geom size="0.006 0.03" pos="-0.007 0.195 0.0225"
-                      quat="0.499998 0.5 0.5 -0.500002" type="cylinder" />
+                      quat="0.499998 0.5 0.5 -0.500002" type="capsule" />
                     <geom pos="0.0044138 0.1008 0.00606018" quat="0.707105 0 -0.707108 0"
                       type="mesh" contype="0" conaffinity="0" group="1" density="0"
                       rgba="0.935303 0.913041 0.886642 1" mesh="left_hand_visual" />
@@ -142,7 +142,7 @@
               diaginertia="0.000504843 0.000501118 0.000213278" />
             <joint name="right_shoulder_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
               actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.001" />
-            <geom size="0.03 0.04" pos="0 0 0.03" quat="0.707105 0 0 -0.707108" type="cylinder" />
+            <geom size="0.03 0.04" pos="0 0 0.03" quat="0.707105 0 0 -0.707108" type="capsule" />
             <geom pos="0.00515641 2.57303e-07 -0.0554411" quat="0.707105 0.707108 0 0" type="mesh"
               contype="0" conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
               mesh="right_shoulder_yaw_visual" />
@@ -161,7 +161,7 @@
                   diaginertia="0.000826154 0.000817596 0.000268064" />
                 <joint name="right_wrist_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
                   actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.01" />
-                <geom size="0.03 0.04" pos="0 0 -0.035" quat="1.32679e-06 0 0 -1" type="cylinder" />
+                <geom size="0.03 0.04" pos="0 0 -0.035" quat="1.32679e-06 0 0 -1" type="capsule" />
                 <geom pos="1.36083e-07 0.000140746 -0.0578009" quat="0.707105 0.707108 0 0"
                   type="mesh" contype="0" conaffinity="0" group="1" density="0"
                   rgba="0.933333 0.933333 0.933333 1" mesh="right_wrist_yaw_visual" />
@@ -182,7 +182,7 @@
                       range="-0.785398 0.785398" actuatorfrcrange="-100 100" frictionloss="0.1"
                       armature="0.01" />
                     <geom size="0.006 0.03" pos="0.007 0.195 0.0225"
-                      quat="0.499998 0.5 -0.5 0.500002" type="cylinder" />
+                      quat="0.499998 0.5 -0.5 0.500002" type="capsule" />
                     <geom pos="-0.00441379 0.100801 0.0060602"
                       quat="9.38184e-07 0.707105 -9.38187e-07 0.707108" type="mesh" contype="0"
                       conaffinity="0" group="1" density="0" rgba="0.935303 0.913041 0.886642 1"
@@ -220,7 +220,7 @@
             <joint name="neck_pitch" pos="0 0 0" axis="0 0 1" range="-0.523599 0.523599"
               actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.01" />
             <geom size="0.09 0.015" pos="0 0.05 0" quat="0.499998 -0.5 -0.5 -0.500002"
-              type="cylinder" />
+              type="capsule" />
             <geom pos="0.00134973 0.0584846 -5.43e-10"
               quat="9.38184e-07 9.38187e-07 -0.707108 -0.707105" type="mesh" contype="0"
               conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
