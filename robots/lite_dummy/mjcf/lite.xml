@@ -48,7 +48,7 @@
           quat="0.696279 -0.123273 0.123273 0.696279" mass="0.375"
           diaginertia="0.000238351 0.000232695 0.000194679" />
         <joint name="left_shoulder_pitch" pos="0 0 0" axis="0 0 1" range="-3.14159 0.785398"
-          actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.0043" />
+          actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
         <geom pos="-6.27e-10 -0.00168619 -0.00682299" quat="0.766046 0.642786 0 0" type="mesh"
           contype="0" conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
           mesh="left_shoulder_pitch_visual" />
@@ -57,7 +57,7 @@
             quat="0.70711 0.707103 0.000188978 -0.000320556" mass="0.42"
             diaginertia="0.000535525 0.000505367 0.000205463" />
           <joint name="left_shoulder_roll" pos="0 0 0" axis="0 0 1" range="-1.5708 1.91986"
-            actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+            actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
           <geom pos="-2.61641e-06 0.0788959 1.66238e-07" quat="0.707105 0 -0.707108 0" type="mesh"
             contype="0" conaffinity="0" group="1" density="0" rgba="0.392063 0.392063 0.392063 1"
             mesh="left_shoulder_roll_visual" />
@@ -66,7 +66,7 @@
               quat="0.996479 1.06824e-05 -0.0838439 -0.00012696" mass="0.43"
               diaginertia="0.00050483 0.000501106 0.000213278" />
             <joint name="left_shoulder_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
-              actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+              actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
             <geom size="0.035 0.06" pos="0 0 0.06"
               quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="capsule" />
             <geom pos="0.00515648 -2.4401e-08 -0.0554418" quat="0.707105 -0.707108 0 0" type="mesh"
@@ -77,7 +77,7 @@
                 quat="0.988908 0.000309112 5.70736e-05 0.148529" mass="0.11"
                 diaginertia="0.000120399 9.14361e-05 8.0933e-05" />
               <joint name="left_elbow_pitch" pos="0 0 0" axis="0 0 1" range="-2.35619 0"
-                actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+                actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
               <geom pos="-0.00846207 0.0260402 3.13818e-06" type="mesh" contype="0" conaffinity="0"
                 group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
                 mesh="left_elbow_pitch_visual" />
@@ -86,7 +86,7 @@
                   quat="0.999972 -0.00742817 -3.53484e-07 -4.75856e-05" mass="0.54"
                   diaginertia="0.000826137 0.000817621 0.000268082" />
                 <joint name="left_wrist_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
-                  actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+                  actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.005" />
                 <geom size="0.03 0.095" pos="0 0 -0.04" quat="1.32679e-06 0 0 -1" type="capsule" />
                 <geom pos="-2.258e-07 0.000140958 -0.0577988" quat="0.707105 -0.707108 0 0"
                   type="mesh" contype="0" conaffinity="0" group="1" density="0"
@@ -96,7 +96,7 @@
                     quat="0.500011 0.499989 0.500011 0.499989" mass="0.25"
                     diaginertia="9.19125e-05 9.04076e-05 7.92687e-05" />
                   <joint name="left_wrist_roll" pos="0 0 0" axis="0 0 1" range="-0.698132 0.698132"
-                    actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+                    actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.005" />
                   <geom pos="3.48e-10 0 -2.12e-10" quat="1 0 0 0" type="mesh" contype="0"
                     conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
                     mesh="left_wrist_roll_visual" />
@@ -105,8 +105,8 @@
                       quat="0.656957 0.753902 0.0039914 -0.00473008" mass="0.167493"
                       diaginertia="0.000456313 0.000413603 9.23022e-05" />
                     <joint name="left_wrist_pitch" pos="0 0 0" axis="0 0 1"
-                      range="-0.785398 0.785398" actuatorfrcrange="-100 100" frictionloss="0.05"
-                      armature="0.001" />
+                      range="-0.785398 0.785398" actuatorfrcrange="-100 100" frictionloss="0.1"
+                      armature="0.005" />
                     <geom size="0.006 0.03" pos="-0.007 0.194 0.0225"
                       quat="0.499998 0.5 0.5 -0.500002" type="capsule" />
                     <geom size="0.035 0.02" pos="0.01 0.1 0.0005" quat="0.499998 0.5 0.5 -0.500002"
@@ -129,7 +129,7 @@
         <inertial pos="6.27e-10 -0.00168619 0.00682299" quat="0.696279 0.123273 -0.123273 0.696279"
           mass="0.375" diaginertia="0.000238351 0.000232695 0.000194679" />
         <joint name="right_shoulder_pitch" pos="0 0 0" axis="0 0 1" range="-3.14159 0.785398"
-          actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.0043" />
+          actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
         <geom pos="6.27e-10 -0.00168619 0.00682299" quat="0.642787 0.766045 0 0" type="mesh"
           contype="0" conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
           mesh="right_shoulder_pitch_visual" />
@@ -138,7 +138,7 @@
             quat="0.70711 0.707102 -0.000965659 -0.000450389" mass="0.42073"
             diaginertia="0.000536872 0.000507074 0.000205928" />
           <joint name="right_shoulder_roll" pos="0 0 0" axis="0 0 1" range="-1.91986 1.5708"
-            actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+            actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
           <geom pos="4.38085e-05 0.0789688 1.65449e-07"
             quat="9.38184e-07 0.707105 -9.38187e-07 0.707108" type="mesh" contype="0"
             conaffinity="0" group="1" density="0" rgba="0.393003 0.393003 0.393003 1"
@@ -148,7 +148,7 @@
               quat="0.996479 -1.3598e-05 -0.0838421 4.79531e-05" mass="0.43"
               diaginertia="0.000504843 0.000501118 0.000213278" />
             <joint name="right_shoulder_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
-              actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+              actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
             <geom size="0.035 0.06" pos="0 0 0.06"
               quat="9.38184e-07 -0.707105 -0.707108 9.38187e-07" type="capsule" />
             <geom pos="0.00515641 2.57303e-07 -0.0554411" quat="0.707105 0.707108 0 0" type="mesh"
@@ -159,7 +159,7 @@
                 quat="0.988903 -0.000149387 -9.75622e-05 0.148563" mass="0.11"
                 diaginertia="0.000120407 9.14368e-05 8.0934e-05" />
               <joint name="right_elbow_pitch" pos="0 0 0" axis="0 0 1" range="-2.35619 0"
-                actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+                actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.009" />
               <geom pos="-0.00846033 0.0260389 8.87366e-07" quat="1.32679e-06 1 0 0" type="mesh"
                 contype="0" conaffinity="0" group="1" density="0"
                 rgba="0.933333 0.933333 0.933333 1" mesh="right_elbow_pitch_visual" />
@@ -168,7 +168,7 @@
                   quat="0.999972 -0.0074245 -5.02671e-06 2.15434e-05" mass="0.54"
                   diaginertia="0.000826154 0.000817596 0.000268064" />
                 <joint name="right_wrist_yaw" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708"
-                  actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+                  actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.005" />
                 <geom size="0.03 0.095" pos="0 0 -0.04" quat="1.32679e-06 0 0 -1" type="capsule" />
                 <geom pos="1.36083e-07 0.000140746 -0.0578009" quat="0.707105 0.707108 0 0"
                   type="mesh" contype="0" conaffinity="0" group="1" density="0"
@@ -178,7 +178,7 @@
                     quat="0.499585 0.500415 0.499585 0.500415" mass="0.25"
                     diaginertia="9.19094e-05 9.04084e-05 7.92688e-05" />
                   <joint name="right_wrist_roll" pos="0 0 0" axis="0 0 1" range="-0.698132 0.698132"
-                    actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.001" />
+                    actuatorfrcrange="-100 100" frictionloss="0.1" armature="0.005" />
                   <geom pos="4.084e-09 -2e-12 -2.02e-10" quat="1.32679e-06 1 0 0" type="mesh"
                     contype="0" conaffinity="0" group="1" density="0"
                     rgba="0.933333 0.933333 0.933333 1" mesh="right_wrist_roll_visual" />
@@ -187,8 +187,8 @@
                       quat="0.656957 0.753902 -0.0039883 0.0047276" mass="0.167493"
                       diaginertia="0.000456312 0.000413602 9.23024e-05" />
                     <joint name="right_wrist_pitch" pos="0 0 0" axis="0 0 1"
-                      range="-0.785398 0.785398" actuatorfrcrange="-100 100" frictionloss="0.05"
-                      armature="0.001" />
+                      range="-0.785398 0.785398" actuatorfrcrange="-100 100" frictionloss="0.1"
+                      armature="0.005" />
                     <geom size="0.006 0.03" pos="0.007 0.194 0.0225"
                       quat="0.499998 0.5 -0.5 0.500002" type="capsule" />
                     <geom size="0.035 0.02" pos="-0.01 0.1 0.0005" quat="0.499998 0.5 -0.5 0.500002"
@@ -212,14 +212,14 @@
         <inertial pos="0 0 0.03" quat="0.5 0.5 0.5 0.5" mass="0.0779115"
           diaginertia="2.40227e-05 2.40227e-05 1.55823e-05" />
         <joint name="neck_yaw" pos="0 0 0" axis="0 0 1" range="-0.785398 0.785398"
-          actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.01" />
+          actuatorfrcrange="-100 100" frictionloss="0.2" armature="0.01" />
         <geom pos="0 0 0.03" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1"
           density="0" rgba="0.933333 0.933333 0.933333 1" mesh="neck_yaw_visual" />
         <body name="neck_roll" pos="0 0 0.03" quat="0.499998 0.5 0.500002 0.5">
           <inertial pos="0 0.03 0" quat="0.5 0.5 0.5 0.5" mass="0.0779115"
             diaginertia="2.40227e-05 2.40227e-05 1.55823e-05" />
           <joint name="neck_roll" pos="0 0 0" axis="0 0 1" range="-0.523599 0.523599"
-            actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.01" />
+            actuatorfrcrange="-100 100" frictionloss="0.2" armature="0.01" />
           <geom pos="0 0.03 0" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" contype="0"
             conaffinity="0" group="1" density="0" rgba="0.933333 0.933333 0.933333 1"
             mesh="neck_roll_visual" />
@@ -228,7 +228,7 @@
               quat="0.589743 0.390132 -0.589743 0.390132" mass="4.7098"
               diaginertia="0.0201095 0.0200477 0.0150257" />
             <joint name="neck_pitch" pos="0 0 0" axis="0 0 1" range="-0.523599 0.523599"
-              actuatorfrcrange="-100 100" frictionloss="0.05" armature="0.01" />
+              actuatorfrcrange="-100 100" frictionloss="0.2" armature="0.01" />
             <geom size="0.09 0.015" pos="0 0.05 0" quat="0.499998 -0.5 -0.5 -0.500002"
               type="capsule" />
             <geom pos="0.00134973 0.0584846 -5.43e-10"
